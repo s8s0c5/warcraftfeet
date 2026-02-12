@@ -1,1 +1,65 @@
-<!DOCTYPE html><html><head><title>Warcraft Feet</title></head><body><h1>send 20g to goforth-nightslayer to add your name here</h1></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Warcraft Feet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #search {
+            font-size: 18px;
+            padding: 10px;
+            width: 300px;
+            margin: 20px 0;
+        }
+        .person {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+        }
+        .person img {
+            max-width: 300px;
+            border: 2px solid #333;
+        }
+        .person h3 {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Warcraft Feet Gallery</h1>
+    <p>send 20g to goforth-nightslayer to add your name here</p>
+    
+    <input type="text" id="search" placeholder="Search character name...">
+    
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const characters = [
+            { name: "Tuskgorr", image: "images/tuskgorr.jpg" }
+        ];
+
+        function displayCharacters(filter = '') {
+            const gallery = document.getElementById('gallery');
+            const filtered = characters.filter(char => 
+                char.name.toLowerCase().includes(filter.toLowerCase())
+            );
+            
+            gallery.innerHTML = filtered.map(char => `
+                <div class="person">
+                    <img src="${char.image}" alt="${char.name}">
+                    <h3>${char.name}</h3>
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            displayCharacters(e.target.value);
+        });
+
+        displayCharacters();
+    </script>
+</body>
+</html>
