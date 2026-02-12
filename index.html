@@ -20,7 +20,7 @@
             text-align: center;
         }
         .person img {
-            max-width: 300px;
+            max-width: 900px;
             border: 2px solid #333;
         }
         .person h3 {
@@ -29,9 +29,7 @@
     </style>
 </head>
 <body>
-    <h1>Warcraft Feet Gallery</h1>
-    <p>send 20g to goforth-nightslayer to add your name here</p>
-    
+
     <input type="text" id="search" placeholder="Search character name...">
     
     <div class="gallery" id="gallery"></div>
@@ -47,12 +45,16 @@
                 char.name.toLowerCase().includes(filter.toLowerCase())
             );
             
-            gallery.innerHTML = filtered.map(char => `
-                <div class="person">
-                    <img src="${char.image}" alt="${char.name}">
-                    <h3>${char.name}</h3>
-                </div>
-            `).join('');
+            if (filtered.length === 0) {
+                gallery.innerHTML = "<p>you're safe, for now</p>";
+            } else {
+                gallery.innerHTML = filtered.map(char => `
+                    <div class="person">
+                        <img src="${char.image}" alt="${char.name}">
+                        <h3>${char.name}</h3>
+                    </div>
+                `).join('');
+            }
         }
 
         document.getElementById('search').addEventListener('input', (e) => {
