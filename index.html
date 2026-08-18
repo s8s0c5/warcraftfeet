@@ -2,6 +2,13 @@
 <html>
 <head>
     <title>Warcraft Feet</title>
+    <base href="/">
+    <script>
+        if (sessionStorage.redirect) {
+            history.replaceState(null, '', sessionStorage.redirect);
+            delete sessionStorage.redirect;
+        }
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
