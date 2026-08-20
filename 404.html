@@ -1,9 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Warcraft Feet</title>
+    <base href="/">
     <script>
-        sessionStorage.redirect = location.href;
-        location.replace('/');
+        if (sessionStorage.redirect) {
+            history.replaceState(null, '', sessionStorage.redirect);
+            delete sessionStorage.redirect;
+        }
     </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #search {
+            font-size: 18px;
+            padding: 10px;
+            width: 300px;
+            margin: 20px 0;
+        }
+        .person {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .person img {
+            max-width: 900px;
+            border: 2px solid #333;
+        }
+        .person h3 {
+            margin: 10px 0;
+        }
+    </style>
 </head>
+<body>
+
+    <input type="text" id="search" placeholder="Search character name...">
+    
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const characters = [
+            // Newest on top
+            { name: "zoe", image: "images/zoe.JPG" },
+            { name: "vaelia", image: "images/vaelia.JPG" },
+            { name: "aecheur", image: "images/aecheur.JPG" },
+            { name: "tex", image: "images/tex.jpg" },
+            { name: "sckmysnake", image: "images/sckmysnake.jpg" },
+            { name: "hurtem", image: "images/hurtem.jpg" },
+            { name: "hamurgrr", image: "images/hamurgrr.jpg" },
+            { name: "ketchpup", image: "images/ketchpup.jpg" },
+            { name: "sulamara", image: "images/sulamara.jpg" },
+            { name: "missminty", image: "images/missminty.jpg" },
+            { name: "zybil", image: "images/zybil.jpg" },
+            { name: "dorage", image: "images/dorage.jpg" },
+            { name: "outrageous", image: "images/outrageous.jpg" },
+            { name: "snork", image: "images/snork.jpg" },
+            { name: "genzy", image: "images/genzy.jpg" },
+            { name: "gadralla", image: "images/gadralla.jpg" },
+            { name: "poiszon", image: "images/poiszon.jpg" },
+            { name: "casslyna", image: "images/casslyna.jpg" },
+            { name: "shaylah", image: "images/shaylah.jpg" },
+            { name: "santanight", image: "images/santanight.jpg" },
+            { name: "onigirii", image: "images/Onigirii.jpg" },
+            { name: "tuskgorr", image: "images/tuskgorr.jpg" },
+
+
+        ];
+
+        function getSlugFromPath() {
+            const parts = location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+            if (parts.length === 0) return '';
+            if (parts[0] === 'warcraftfeet') return parts[1] || '';
+            return parts[0];
+        }
+
+        function displayCharacters(filter = '', exact = false) {
+            const gallery = document.getElementById('gallery');
+            const f = filter.toLowerCase();
+            const filtered = characters.filter(char => {
+                const name = char.name.toLowerCase();
+                return exact ? name === f : name.includes(f);
+            });
+            
+            if (filtered.length === 0) {
+                gallery.innerHTML = "<p>you're safe, for now</p>";
+            } else {
+                gallery.innerHTML = filtered.map(char => `
+                    <div class="person">
+                        <img src="${char.image}" alt="${char.name}">
+                        <h3>${char.name}</h3>
+                    </div>
+                `).join('');
+            }
+        }
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            displayCharacters(e.target.value);
+        });
+
+        const urlSlug = getSlugFromPath();
+        if (urlSlug) {
+            document.getElementById('search').value = urlSlug;
+            displayCharacters(urlSlug, true);
+        } else {
+            displayCharacters();
+        }
+    </script>
+</body>
 </html>
