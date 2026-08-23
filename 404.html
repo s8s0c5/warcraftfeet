@@ -35,11 +35,18 @@
             border: 2px solid #333;
         }
         .next {
-            font-size: 48px;
-            background: none;
+            width: 48px;
+            height: 48px;
+            margin-left: 16px;
+            padding: 0;
             border: none;
+            border-radius: 50%;
+            background: #222;
+            color: #fff;
+            font-size: 28px;
+            line-height: 48px;
             cursor: pointer;
-            margin-left: 10px;
+            flex-shrink: 0;
         }
         .person h3 {
             margin: 10px 0;
@@ -111,7 +118,7 @@
                     <div class="person" data-pics="${pics.join('|')}" data-i="0">
                         <div class="frame">
                             <img src="${pics[0]}" alt="${char.name}">
-                            ${pics.length > 1 ? '<button type="button" class="next">→</button>' : ''}
+                            ${pics.length > 1 ? '<button type="button" class="next">›</button>' : ''}
                         </div>
                         <h3>${char.name}</h3>
                     </div>
