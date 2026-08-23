@@ -26,9 +26,25 @@
             margin: 20px auto;
             text-align: center;
         }
+        .frame {
+            display: inline-block;
+            position: relative;
+        }
         .person img {
             max-width: 900px;
             border: 2px solid #333;
+        }
+        .next {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 48px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            text-shadow: 0 0 4px #000;
         }
         .person h3 {
             margin: 10px 0;
@@ -44,6 +60,7 @@
     <script>
         const characters = [
             // Newest on top
+            { name: "bigstink", images: ["images/bigstink1.JPG", "images/bigstink2.JPG"] },
             { name: "pinnen", image: "images/pinnen.JPG" },
             { name: "frothiee", image: "images/frothiee.JPG" },
             { name: "camioneta", image: "images/camioneta.JPG" },
@@ -93,14 +110,30 @@
             if (filtered.length === 0) {
                 gallery.innerHTML = "<p>you're safe, for now</p>";
             } else {
-                gallery.innerHTML = filtered.map(char => `
-                    <div class="person">
-                        <img src="${char.image}" alt="${char.name}">
+                gallery.innerHTML = filtered.map(char => {
+                    const pics = char.images || [char.image];
+                    return `
+                    <div class="person" data-pics="${pics.join('|')}" data-i="0">
+                        <div class="frame">
+                            <img src="${pics[0]}" alt="${char.name}">
+                            ${pics.length > 1 ? '<button type="button" class="next">→</button>' : ''}
+                        </div>
                         <h3>${char.name}</h3>
                     </div>
-                `).join('');
+                `;
+                }).join('');
             }
         }
+
+        document.getElementById('gallery').addEventListener('click', (e) => {
+            if (!e.target.classList.contains('next')) return;
+            const person = e.target.closest('.person');
+            const pics = person.getAttribute('data-pics').split('|');
+            let i = Number(person.getAttribute('data-i')) + 1;
+            if (i >= pics.length) i = 0;
+            person.setAttribute('data-i', i);
+            person.querySelector('img').src = pics[i];
+        });
 
         document.getElementById('search').addEventListener('input', (e) => {
             displayCharacters(e.target.value);
