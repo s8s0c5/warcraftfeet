@@ -51,11 +51,18 @@
         .person h3 {
             margin: 10px 0;
         }
+        #showall {
+            font-size: 18px;
+            padding: 10px 16px;
+            margin-left: 8px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
     <input type="text" id="search" placeholder="Search character name...">
+    <button type="button" id="showall">show all</button>
     
     <div class="gallery" id="gallery"></div>
 
@@ -139,6 +146,12 @@
 
         document.getElementById('search').addEventListener('input', (e) => {
             displayCharacters(e.target.value);
+        });
+
+        document.getElementById('showall').addEventListener('click', () => {
+            document.getElementById('search').value = '';
+            history.replaceState(null, '', '/');
+            displayCharacters();
         });
 
         const urlSlug = getSlugFromPath();
