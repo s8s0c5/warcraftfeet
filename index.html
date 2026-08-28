@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-store">
+    <title>warcraftfeet</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #0e1116;
+            color: #e8e6e3;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: min(420px, 90%);
+        }
+        a {
+            display: block;
+            padding: 18px 20px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            color: #f0c75e;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        a:hover {
+            border-color: #f0c75e;
+        }
+    </style>
 </head>
-<body style="background:#fff;margin:0">
-    <a href="/bosses">OctoWoW world boss guide</a><br>
-    <a href="/feet">feet</a>
+<body>
+    <main>
+        <a href="/bosses">World boss guide</a>
+        <a href="/feet">feet</a>
+    </main>
 </body>
 </html>

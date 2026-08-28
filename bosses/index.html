@@ -4,50 +4,1099 @@
     <meta charset="utf-8">
     <title>TWOW World Bosses &amp; Interesting Items</title>
     <style>
-        body { margin: 0; background: #ddd; font-family: Arial, sans-serif; }
+        body { margin: 0; background: #ddd; font-family: Arial, Helvetica, sans-serif; color: #000; font-size: 13px; line-height: 1.45; }
+        a { color: #1155cc; }
         .top { text-align: center; padding: 12px; background: #fff; font-size: 14px; }
         .top a { margin: 0 10px; }
-        .pages { max-width: 900px; margin: 0 auto; background: #fff; }
-        .pages img { display: block; width: 100%; }
+        .wrap { max-width: 900px; margin: 0 auto; background: #fff; padding: 28px 36px 60px; }
+        h1 { text-align: center; font-size: 28px; margin: 12px 0 4px; }
+        h2 { font-size: 16px; margin: 22px 0 8px; }
+        h3 { font-size: 14px; margin: 16px 0 8px; }
+        p { margin: 0 0 10px; }
+        .headrow { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+        .headrow img { width: 78%; border: 1px solid #000; }
+        .stars { font-size: 13px; padding-top: 8px; }
+        .stars div { margin: 2px 0; }
+        .meta { text-align: center; font-style: italic; margin-bottom: 12px; }
+        .easy { color: #38761d; font-weight: bold; font-style: normal; }
+        .medium { color: #e69138; font-weight: bold; font-style: normal; }
+        .hard { color: #cc0000; font-weight: bold; font-style: normal; }
+        .extreme { color: #cc0000; font-weight: bold; font-style: normal; }
+        .hero { display: block; width: 100%; border: 1px solid #000; margin: 28px 0 10px; }
+        .map { border: 1px solid #000; max-width: 100%; }
+        .box { border: 1px solid #000; background: #f3f3f3; padding: 10px 14px; margin: 14px 0; }
+        .note { border: 1px solid #000; padding: 10px 14px; margin: 12px 0; }
+        .split { display: flex; gap: 18px; align-items: flex-start; }
+        .split .left { flex: 1; min-width: 0; }
+        .split .right { width: 38%; flex-shrink: 0; }
+        .split .right img { width: 100%; border: 1px solid #000; margin-bottom: 8px; }
+        ul { margin: 6px 0 12px; padding-left: 18px; }
+        ol { margin: 6px 0 12px; padding-left: 22px; }
+        li { margin: 4px 0; }
+        .ab { list-style: none; padding-left: 0; }
+        .ab li { display: flex; gap: 6px; align-items: flex-start; margin: 6px 0; }
+        .ab img { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; }
+        .ab56 img { width: 18px; height: 18px; }
+        table { border-collapse: collapse; width: 100%; margin: 6px 0 16px; font-size: 12px; }
+        th, td { border: 1px solid #000; padding: 5px 8px; vertical-align: top; }
+        th { background: #c6d9f1; text-align: center; }
+        td { text-align: center; }
+        td:first-child { text-align: left; }
+        td.found { text-align: left; }
+        .summon th { background: #434343; color: #fff; }
+        .summon tr:nth-child(even) { background: #f3f3f3; }
+        .banner { background: #434343; color: #fff; padding: 10px 12px; display: flex; gap: 10px; align-items: center; margin: 28px 0 0; }
+        .banner img { width: 40px; height: 40px; }
+        .banner h2 { margin: 0; color: #fff; font-size: 20px; }
+        .banner p { margin: 2px 0 0; font-size: 12px; }
+        .fire { color: #cc0000; font-weight: bold; }
+        .nature { color: #38761d; font-weight: bold; }
+        .arcane { color: #674ea7; font-weight: bold; }
+        .phys { color: #666; font-weight: bold; }
+        .holy { color: #bf9000; font-weight: bold; }
+        .frost { color: #3d85c6; font-weight: bold; }
+        .gold { color: #bf9000; font-weight: bold; }
+        .red { color: #cc0000; }
+        .purple { color: #674ea7; font-weight: bold; }
+        .grid2 { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #000; margin: 12px 0 20px; }
+        .grid2 div { border: 1px solid #000; padding: 8px; text-align: center; }
+        .grid2 img { width: 100%; border: 1px solid #000; }
+        .dragon { background: #d9ead3; display: flex; justify-content: space-between; padding: 6px 12px; margin: 18px 0 8px; font-weight: bold; }
+        .buffs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; margin: 8px 0 16px; }
+        .buffs div { display: flex; gap: 6px; align-items: center; }
+        .buffs img { width: 16px; height: 16px; }
+        .stars-list { list-style: none; padding-left: 0; }
+        .stars-list li { margin: 8px 0; }
+        .toc-box { border: 1px solid #000; background: #d0e2f3; padding: 10px 14px; margin: 16px 0; }
+        .stack { display: flex; flex-direction: column; gap: 8px; }
+        .ped { width: 100%; border: 1px solid #000; }
+        .slot { font-weight: bold; margin: 14px 0 4px; }
+        .center { text-align: center; }
+        .maps-row { display: flex; gap: 8px; }
+        .maps-row img { width: 50%; border: 1px solid #000; }
     </style>
 </head>
 <body>
     <div class="top">
-        <a href="/">home</a>
-        <a href="https://tinyurl.com/53j8dd56">Tiny Link</a>
-        <a href="https://turtle-wow.fandom.com/wiki/BigWigs">BigWigs Addon</a>
-        <a href="https://database.turtlecraft.gg/">Database</a>
+        <a href="/index.html">home</a><br>
+        <a href="https://tinyurl.com/53j8dd56">Tiny Link</a><br>
+        <a href="https://turtle-wow.fandom.com/wiki/BigWigs">BigWigs Addon</a><br>
+        <a href="https://database.turtlecraft.gg/">Database</a><br>
         <a href="https://docs.google.com/spreadsheets/d/1LJWo5K9kCoJH5oTZlpNte-WeP4fYOxF9n5eKg9_QYsU/edit?usp=sharing">Respawn Data</a>
     </div>
-    <div class="pages">
-        <img src="pages/01.jpg" alt="Page 1">
-        <img src="pages/02.jpg" alt="Page 2">
-        <img src="pages/03.jpg" alt="Page 3">
-        <img src="pages/04.jpg" alt="Page 4">
-        <img src="pages/05.jpg" alt="Page 5">
-        <img src="pages/06.jpg" alt="Page 6">
-        <img src="pages/07.jpg" alt="Page 7">
-        <img src="pages/08.jpg" alt="Page 8">
-        <img src="pages/09.jpg" alt="Page 9">
-        <img src="pages/10.jpg" alt="Page 10">
-        <img src="pages/11.jpg" alt="Page 11">
-        <img src="pages/12.jpg" alt="Page 12">
-        <img src="pages/13.jpg" alt="Page 13">
-        <img src="pages/14.jpg" alt="Page 14">
-        <img src="pages/15.jpg" alt="Page 15">
-        <img src="pages/16.jpg" alt="Page 16">
-        <img src="pages/17.jpg" alt="Page 17">
-        <img src="pages/18.jpg" alt="Page 18">
-        <img src="pages/19.jpg" alt="Page 19">
-        <img src="pages/20.jpg" alt="Page 20">
-        <img src="pages/21.jpg" alt="Page 21">
-        <img src="pages/22.jpg" alt="Page 22">
-        <img src="pages/23.jpg" alt="Page 23">
-        <img src="pages/24.jpg" alt="Page 24">
-        <img src="pages/25.jpg" alt="Page 25">
-        <img src="pages/26.jpg" alt="Page 26">
-        <img src="pages/27.jpg" alt="Page 27">
-        <img src="pages/28.jpg" alt="Page 28">
+    <div class="wrap">
+
+        <div class="headrow">
+            <img src="img/p01_00_1536x763.png" alt="Turtle WoW World Boss Guide">
+            <div class="stars">
+                <div>★ <a href="https://tinyurl.com/53j8dd56">Tiny Link</a></div>
+                <div>★ <a href="https://turtle-wow.fandom.com/wiki/BigWigs">BigWigs Addon</a></div>
+                <div>★ <a href="https://database.turtlecraft.gg/">Database</a></div>
+                <div>★ <a href="https://docs.google.com/spreadsheets/d/1LJWo5K9kCoJH5oTZlpNte-WeP4fYOxF9n5eKg9_QYsU/edit?usp=sharing">Respawn Data</a></div>
+            </div>
+        </div>
+
+        <p>There are thirteen world bosses in Turtle WoW, with respawn timers ranging from days to weeks after being killed.</p>
+        <p>Each boss is assigned a comparative difficulty rating and a recommended number of people. With that said, none of these bosses are as difficult as most raid bosses and can afford some leeway in terms of gearing and numbers.</p>
+
+        <img src="img/p01_01_1097x201.png" alt="World boss respawn timers" style="width:100%;border:1px solid #000;margin:12px 0;">
+
+        <h2>Summoning World Bosses</h2>
+        <p>As of Patch 1.18, world bosses can be summoned at will by completing a repeatable quest (with the exception of Moo and Ostarius who remain unchanged). The quest is unique for each boss, but each requires obtaining an item from a raid. Further details are below each boss section.</p>
+
+        <table class="summon">
+            <tr><th>Boss</th><th>Summoning Item</th><th>Drops From</th></tr>
+            <tr><td><a href="#azuregos">Azuregos</a></td><td><a href="https://database.turtlecraft.gg/?item=42178">Rite of Resurrection</a></td><td>Majordomo Executus (Molten Core)</td></tr>
+            <tr><td><a href="#clackora">Cla’ckora</a></td><td><a href="https://database.turtlecraft.gg/?item=56088">Ancient Idol of Cla’ckora</a></td><td>Fishing</td></tr>
+            <tr><td><a href="#concavius">Concavius</a></td><td><a href="https://database.turtlecraft.gg/?item=42169">Bursting Mana Shard</a></td><td>Moam (AQ20)</td></tr>
+            <tr><td><a href="#darkreaver">Dark Reaver of Karazhan</a></td><td><a href="https://database.turtlecraft.gg/?item=42166">Lord Blackwald II's Riding Whistle</a></td><td>Lord Blackwald II (Karazhan 10)</td></tr>
+            <tr><td><a href="#dragons">Dragons of Nightmare</a></td><td><a href="https://database.turtlecraft.gg/?item=42165#objective-of">Wail of Ysera</a></td><td>Favor of Erennius (Emerald Sanctum Hard Mode)</td></tr>
+            <tr><td><a href="#nerubian">Nerubian Overseer</a></td><td><a href="https://database.turtlecraft.gg/?item=42167">Crypt Lord's Beckoning</a></td><td>Anub'Rekhan (Naxxramas)</td></tr>
+            <tr><td><a href="#kazzak">Lord Kazzak</a></td><td><a href="https://database.turtlecraft.gg/?item=42180">Twisting Rift Crystal</a></td><td>Majordomo Executus (Molten Core)</td></tr>
+            <tr><td><a href="#ostarius">Ostarius</a></td><td><a href="https://database.turtlecraft.gg/?quest=40107">Questline</a></td><td></td></tr>
+            <tr><td><a href="#lycan">Father Lycan</a></td><td><a href="https://database.turtlecraft.gg/?quest=41386">Questline</a></td><td></td></tr>
+            <tr><td><a href="#moo">Moo</a></td><td><a href="https://database.turtlecraft.gg/?spell=46482">???</a></td><td>???</td></tr>
+        </table>
+
+        <p><b>Loot Lockout:</b> Once you have killed a boss, you cannot receive loot from that boss until after the weekly reset. You can assist with the kill and your presence won't affect the loot for others, so long as you are not the master looter. <a href="https://github.com/shonkaearn-lab/World-Boss-Lockouts">This addon</a> helps track it.</p>
+
+        <img class="hero" src="img/p02_00_1200x675.png" alt="Azuregos" id="azuregos">
+        <h1>Azuregos</h1>
+        <p class="meta">Azshara | 20 Man | T1 | <span class="easy">Easy</span></p>
+        <p><a href="https://www.wowhead.com/classic-ptr/npc=6109/azuregos">Azuregos</a> spawns in Azshara. You are in the right place when you can see the <a href="https://www.wowhead.com/classic-ptr/npc=15481/spirit-of-azuregos">Spirit of Azuregos</a>, which follows the same path as the boss. This is a straightforward encounter with light movement and periodic threat resets. The fight is forgiving as long as positioning remains clean and casters respect the spell reflection.</p>
+
+        <div class="split">
+            <div class="left">
+                <h2>Azuregos Abilities</h2>
+                <ul class="ab">
+                    <li><img src="img/p02_01_15x15.png" alt=""> <b>Cleave</b> and <img src="img/p02_02_15x15.png" alt=""> <b>Frost Breath:</b> Frontal attacks lethal to non-tanks. Azuregos must always face away from the raid.</li>
+                    <li><img src="img/p02_03_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=21097/manastorm">Manastorm:</a> Blizzard-like AoE that drains mana. Move out immediately.</li>
+                    <li><img src="img/p02_04_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=20223/magic-reflection">Magic Reflection:</a> Periodic spell reflect buff. All casters pause DPS when active.</li>
+                    <li><img src="img/p02_05_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=4801/teleport">Teleport:</a> Brings entire raid to his location and resets threat.</li>
+                </ul>
+                <h2>Strategy</h2>
+                <p>Everyone stacks in melee range at his side throughout the fight, moving together to avoid Manastorm. After teleports, tanks must quickly regain threat and reposition Azuregos away from the raid to avoid Cleave/Breath. Watch for Magic Reflection buff and immediately stop casting to avoid reflection damage.</p>
+            </div>
+            <div class="right">
+                <img src="img/p02_06_751x491.png" alt="Azshara map">
+                <img src="img/p02_07_369x373.png" alt="Azuregos path">
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Summoning Azuregos</h2>
+            <ol>
+                <li>Loot the <a href="https://database.turtlecraft.gg/?item=42178">Rite of Resurrection</a> from Majordomo Executus’s chest in Molten Core.</li>
+                <li>Get 10x <a href="https://database.turtlecraft.gg/?item=42179">Blue Dragon Essence</a> from blue dragons in Winterspring, Azshara, or Moonwhisper Coast.</li>
+                <li>Hand in the quest to the <a href="https://www.wowhead.com/classic-ptr/npc=15481/spirit-of-azuregos">Spirit of Azuregos</a> in Azshara.</li>
+            </ol>
+        </div>
+
+        <img class="hero" src="img/p03_00_1331x679.png" alt="Cla'ckora" id="clackora">
+        <h1>Cla’ckora</h1>
+        <p class="meta">Azshara | 10-15 Man | T1 | <span class="easy">Easy</span></p>
+        <p><a href="https://database.turtlecraft.gg/?npc=59963">Cla’ckora</a> is summoned at a beach altar in northern Azshara. Summoning it requires collecting three pieces of an Ancient Idol through a questline involving fishing. The boss stays summoned for 30 minutes before despawning.</p>
+        <div class="box"><b>Respawn:</b> Cla’ckora can be summoned repeatedly with additional Idols. There is no loot lockout as of 1.18.</div>
+
+        <h2>Cla’ckora Abilities</h2>
+        <ul class="ab ab56">
+            <li><img src="img/p03_01_56x56.png" alt=""> <b>Frost Volley:</b> High damage AoE frost spell (can be stunned but not interrupted).</li>
+            <li><img src="img/p03_02_56x56.png" alt=""> <b>Frost Nova:</b> Freezes nearby units in place for 10 seconds.</li>
+            <li><img src="img/p03_03_56x56.png" alt=""> <b>Void Zone:</b> Drops a black area on the ground that deals damage. Move the boss out of it.</li>
+            <li><img src="img/p03_04_56x56.png" alt=""> <b>Adds:</b> Periodically summons two healing adds (PRIORITY targets).</li>
+        </ul>
+        <h2>Strategy</h2>
+        <p>A stun rotation on Frost Volley is critical. Immediately kill adds when they spawn as they heal the boss significantly. Move the boss out of void zones.</p>
+
+        <h2>Summoning Cla’ckora</h2>
+        <p><i>Prerequisites:</i></p>
+        <ul>
+            <li>395 Fishing (buffed)</li>
+            <li>5× Lightning Eels</li>
+            <li>10× Elemental Water</li>
+        </ul>
+
+        <div class="split">
+            <div class="left">
+                <h2>Top Piece of an Ancient Idol</h2>
+                <ol>
+                    <li>Speak with <a href="https://database.turtlecraft.gg/?npc=81046">Inunquaq</a> the Tuskarr in Darkshore.</li>
+                    <li>Complete <a href="https://database.turtlecraft.gg/?quest=80391">Crawling for Meat</a> by killing nearby crabs.</li>
+                    <li>Accept <a href="https://database.turtlecraft.gg/?quest=40321">The Northeast Passage</a> and take the boat to Icepoint Rock</li>
+                    <li>Fish until you find a <a href="https://database.turtlecraft.gg/?item=56086">Glowing Arctic Grayling</a></li>
+                    <li>Open the fish to get the <a href="https://database.turtlecraft.gg/?item=56083">Top Piece of an Ancient Idol</a></li>
+                </ol>
+            </div>
+            <div class="right">
+                <img src="img/p03_05_825x498.png" alt="Darkshore map">
+            </div>
+        </div>
+
+        <div class="split">
+            <div class="left">
+                <h2>Middle Piece of an Ancient Idol</h2>
+                <p>This piece drops from <a href="https://www.wowhead.com/classic/npc=15114/gahzranka">Ghaz’ranka</a>, the fishing boss in Zul’Gurub. The Idol has a roughly 35% chance to drop.</p>
+                <ul>
+                    <li><a href="https://www.wowhead.com/classic/news/how-to-summon-gahzranka-obtain-the-tome-of-polymorph-turtle-classic-anniversary-376">Ghaz’ranka Summoning Guide</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <img src="img/p04_00_585x475.png" alt="Ghaz'ranka">
+            </div>
+        </div>
+
+        <div class="split">
+            <div class="left">
+                <h2>Bottom Piece of an Ancient Idol</h2>
+                <ol>
+                    <li>Fish in Tel’Abim in the area shown (left map) until you find a <a href="https://database.turtlecraft.gg/?item=56087">Barnacle Covered Key</a>. You can hold multiple keys.</li>
+                    <li>Enter the gorilla cave (right map). Hug the right wall without dropping to the lower level. Loot the <a href="https://database.turtlecraft.gg/?object=2020106">Mosscovered Chest</a> and complete <a href="https://database.turtlecraft.gg/?quest=41346">A Mossy Mystery</a> which rewards the <a href="https://database.turtlecraft.gg/?item=56085">Bottom Piece of an Ancient Idol</a>.</li>
+                </ol>
+            </div>
+            <div class="right">
+                <img src="img/p04_01_640x460.png" alt="Tel'Abim maps">
+            </div>
+        </div>
+
+        <div class="split">
+            <div class="left">
+                <h2>Summoning Cla’ckora</h2>
+                <ol>
+                    <li>Travel to the beach altar in Azshara marked on the map.</li>
+                    <li>Combine the three pieces into the <a href="https://database.turtlecraft.gg/?item=56088">Ancient Idol of Cla’ckora</a>.</li>
+                    <li>Complete the quest <a href="https://database.turtlecraft.gg/?quest=41345">Altar of an Ancient Evil</a> with the idol, 5 <a href="https://database.turtlecraft.gg/?item=13757">Lightning Eels</a>, and 10 Elemental Water.</li>
+                </ol>
+            </div>
+            <div class="right">
+                <img src="img/p04_02_743x493.png" alt="Azshara altar map">
+                <img src="img/p04_03_526x667.png" alt="Altar of an Ancient Evil">
+            </div>
+        </div>
+
+        <img class="hero" src="img/p05_00_1093x507.png" alt="Concavius" id="concavius">
+        <h1>Concavius</h1>
+        <p class="meta">Desolace | 10 - 15 Man | T0 | <span class="easy">Easy</span></p>
+        <p><a href="https://database.turtlecraft.gg/?npc=92213">Concavius</a> is a voidwalker boss in Shadowbreak Ravine, Desolace. It drops one epic item with minor Shadow Resistance and a bag of valuable trade goods. This is one of the easiest world bosses.</p>
+        <div class="box"><b>Note:</b> Three level 60 rares (Liang, Gozzo, and Jabiry) spawn in the same area. They are not related to his spawn, but do drop items valuable to people doing Silithus quests.</div>
+
+        <div class="split">
+            <div class="left">
+                <h2>Concavius Abilities:</h2>
+                <ul class="ab ab56">
+                    <li><img src="img/p05_01_56x56.png" alt=""> <b>Vacuum:</b> Draws all creatures to melee range.</li>
+                    <li><img src="img/p05_02_15x15.png" alt=""> <b>Mana Burn:</b> AoE that drains mana and fears. Fear Ward has no effect. Can be line-of-sighted.</li>
+                    <li><img src="img/p05_03_56x56.png" alt=""> <b>Veil of Shadow:</b> At 30% he starts casting this spell which reduces healing taken by 75% and can be decursed.</li>
+                </ul>
+                <h2>Strategy</h2>
+                <p>Extremely simple fight. Use the central altar to line-of-sight the Mana Burn. Ensure off-tank is ready to taunt during fear effects.</p>
+            </div>
+            <div class="right">
+                <img src="img/p05_04_798x535.png" alt="Desolace map">
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Summoning Concavius</h2>
+            <ol>
+                <li>Loot the <a href="https://database.turtlecraft.gg/?item=42169">Bursting Mana Shard</a> from Moam in AQ20.</li>
+                <li>Bring 3x Nexus Crystal to the altar at Concavius’s spawn point and complete the quest.</li>
+            </ol>
+        </div>
+
+        <img class="hero" src="img/p06_00_1920x949.png" alt="Dark Reaver of Karazhan" id="darkreaver">
+        <h1>Dark Reaver of Karazhan</h1>
+        <p class="meta">Deadwind Pass | 20 - 30 Man | T1 | <span class="hard">Hard</span></p>
+
+        <div class="split">
+            <div class="left">
+                <p>The <a href="https://database.turtlecraft.gg/?npc=80936">Dark Reaver of Karazhan</a> spawns outside the Karazhan 10-man raid. He drops decent loot, including Arcane Resistance gear. The primary challenge is managing adds. He is undead, meaning you can use your Argent Dawn trinkets.</p>
+                <h2>Dark Reaver Abilities:</h2>
+                <ul>
+                    <li><b>Forlorn Spirits:</b> Periodic adds that must be tanked and killed.</li>
+                    <li><b>Class Adds:</b> An additional class-specific add that can only be damaged by that class. Use DPS specs where possible, such as shadow priests, retribution paladins, etc.</li>
+                    <li><b>Unbalancing Strike:</b> A debuff reducing tank defense by 100. Use a second tank to tank swap until the debuff runs out.</li>
+                </ul>
+                <p>If a class is present in your raid, it's suggested to have 3 members of that class to kill the class-specific add. Classes not present won't spawn their adds.</p>
+            </div>
+            <div class="right">
+                <img src="img/p06_01_400x482.png" alt="Deadwind Pass map">
+            </div>
+        </div>
+
+        <h2>Strategy</h2>
+        <p>The kill priority is <i>Class Adds</i> &gt; <i>General Adds</i> &gt; <i>Boss</i>.</p>
+        <p>Have all members of the raid stack in melee so that adds can be gathered easily. All DPS should kill the general adds when they appear. Call out which class the current add belongs to and have members of that class kill it immediately.</p>
+        <p>Swap tanks when Unbalancing Strike is applied to reduce the damage taken.</p>
+
+        <div class="box">
+            <h2>Summoning the Dark Reaver</h2>
+            <ol>
+                <li>Loot the <a href="https://database.turtlecraft.gg/?item=42166">Lord Blackwald II’s Riding Whistle</a> from <a href="https://database.turtlecraft.gg/?npc=61222">Lord Blackwald II</a> in Kara10</li>
+                <li>Bring 10x Essence of Undeath to the church behind Karazhan and complete the quest.</li>
+            </ol>
+        </div>
+
+        <img class="hero" src="img/p07_00_675x380.png" alt="Dragons of Nightmare" id="dragons">
+        <h1>Dragons of Nightmare</h1>
+        <p class="meta">Various | 20-40 Man | T1 | Varies</p>
+        <p>Each dragon spawns at one of four possible locations. All four dragons spawn at the same time, but their locations are random and not fixed per dragon. These bosses are a strong source of Nature Resistance gear.</p>
+        <div class="box center"><b>Respawn Timer</b> starts only after all four dragons are dead</div>
+
+        <div class="grid2">
+            <div>
+                <b>The Twilight Grove in Duskwood</b>
+                <img src="img/p07_01_746x485.png" alt="Duskwood">
+            </div>
+            <div>
+                <b>Seradane in The Hinterlands</b>
+                <img src="img/p07_02_745x487.png" alt="The Hinterlands">
+            </div>
+            <div>
+                <b>Dream Bough of Feralas</b>
+                <img src="img/p07_03_742x487.png" alt="Feralas">
+            </div>
+            <div>
+                <b>Bough Shadow of Ashenvale</b>
+                <img src="img/p07_04_745x485.png" alt="Ashenvale">
+            </div>
+        </div>
+
+        <h2>Shared abilities:</h2>
+        <ul class="ab">
+            <li><img src="img/p08_00_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=24781/dream-fog">Dream Fog:</a> Two floating green clouds put you to sleep for 5 seconds. Avoid this.</li>
+            <li><img src="img/p08_01_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=7941/immunity-nature">Immunity: Nature:</a> Dragons of Nightmare are immune to nature damage.</li>
+            <li><img src="img/p08_02_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=25040/mark-of-nature">Mark of Nature:</a> A player who dies will receive a 15-minute debuff that puts them to sleep if they approach a Dragon in combat, preventing them from rejoining the fight.</li>
+            <li><img src="img/p08_03_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=24818/noxious-breath">Noxious Breath:</a> Frontal cone DoT that increases cooldowns by 10 seconds per stack (max 6). Tanks swap at 2-3 stacks.</li>
+            <li><img src="img/p08_04_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=15847/tail-sweep">Tail Sweep:</a> Do not stand behind them.</li>
+        </ul>
+        <p>Each dragon uses a unique ability at 75%, 50% and 25% health. Facing the portal, DPS should start the fight behind the left pillar at the bottom of the ramp while the boss is pulled to avoid a Noxious Breath before it is positioned. Tanks position the boss at the right pillar so it is perpendicular to the raid to avoid the group being hit by Noxious Breath and Tail Swipe.</p>
+
+        <div class="dragon"><span>Ysondre</span> <span class="easy">Easy</span></div>
+        <p>Use a <a href="https://www.wowhead.com/classic-ptr/item=13458/greater-nature-protection-potion">Greater Nature Protection Potion</a> before this fight.</p>
+        <ul class="ab">
+            <li><img src="img/p08_05_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=24819/lightning-wave">Lightning Wave:</a> A chain lightning effect that bounces to nearby targets, and with each successive hit, players take more damage. Ranged dps should spread.</li>
+        </ul>
+        <h3>Ysondre at 75%, 50% &amp; 25% Health</h3>
+        <ul class="ab">
+            <li><img src="img/p08_06_15x15.png" alt=""> <a href="https://www.wowhead.com/classic-ptr/spell=24795/summon-demented-druid-spirit">Summon Demented Druid Spirits:</a> Ysondre will spawn <a href="https://www.wowhead.com/classic/npc=15260/demented-druid-spirit">Demented Druid Spirits</a> for every member in the raid, with 2500 health and the following abilities. DPS should focus on the adds. Everyone should cleanse the debuffs if possible.
+                <ul class="ab">
+                    <li><img src="img/p08_07_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=16247/curse-of-thorns">Curse of Thorns:</a> Curses an enemy for 3 minutes, giving them a 50% chance to take 38 to 82 damage on attack.</li>
+                    <li><img src="img/p08_08_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=9835/moonfire">Moonfire:</a> Burns the enemy for 195 to 228 Arcane damage and then an additional 384 Arcane damage over 12 sec.</li>
+                    <li><img src="img/p08_09_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=6726/silence">Silence:</a> Prevents the target from casting spells for 5 seconds.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="dragon" style="background:#d9d9d9;"><span>Lethon</span> <span class="hard">Hard</span></div>
+        <p>Use a <a href="https://www.wowhead.com/classic-ptr/item=13459/greater-shadow-protection-potion">Greater Shadow Protection Potion</a> before this fight.</p>
+        <p>You need 3 tanks to coordinate the Shadow Bolt Whirl and the Breath so that the stacks don’t get too high.</p>
+        <ul class="ab">
+            <li><img src="img/p08_10_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=24821/shadow-bolt-whirl">Shadow Bolt Whirl:</a> His feet will glow and he will fire four sets of shadow bolts alternating between his two sides, dealing 800-1200 damage. Tanks will need to face the side he is shooting from away from the raid. DPS will stay in the same position the whole fight. Every 4 shadowbolts, do a tank swap so that he turns 180 degrees, facing the new Shadow Bolt side away from the raid.</li>
+        </ul>
+        <h3>Lethon at 75%, 50% &amp; 25% Health</h3>
+        <ul class="ab">
+            <li><img src="img/p09_00_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=24811/draw-spirit">Draw Spirit:</a> Anyone within 100 yards of <a href="https://www.wowhead.com/classic/npc=14888/lethon">Lethon</a> is stunned for 5 seconds, taking shadow damage every 2 seconds, and a Spirit Shade will emerge from their body. The Spirit Shades will walk toward Lethon and heal him for ~15000 health if they reach him. They have ~500 health each and are immune to AoE spells.
+                <ul>
+                    <li>The simplest approach is to ignore the Spirit Shades. Let him heal back to full at each checkpoint, then DPS him down again. The alternative is to have melee run out before the cast, then have everyone single target their shade to kill them before they reach the boss.</li>
+                    <li>Ensure everyone is topped up before this ability. Healers should do big AOE healing when the stun ends.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="dragon"><span>Taerar</span> <span class="easy">Easy</span></div>
+        <p>The main tanks should have their backs to the pillar in case of knockback. Ranged should stay at max range to avoid fear. Three tanks must be prepared to grab the Shades when they appear and face them away from the raid to avoid the Breath and Tail Swipe.</p>
+        <ul class="ab">
+            <li><img src="img/p09_01_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=22893/arcane-blast">Arcane Blast:</a> A single-target knockback that deals 1000-1350 Arcane damage.</li>
+            <li><img src="img/p09_02_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=22686/bellowing-roar">Bellowing Roar:</a> A group fear for everyone within 30 yards, every 30 seconds.</li>
+        </ul>
+        <h3>Taerar at 75%, 50% &amp; 25% Health</h3>
+        <ul class="ab">
+            <li><img src="img/p09_03_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=24841/summon-shade-of-taerar">Summon Shade of Taerar:</a> Taerar will banish himself and summon three Shades. Tanks should each pick up a Shade while the raid DPSes them down. Each shade has a weaker breath attack as well as a poisonous cloud around their feet.</li>
+        </ul>
+
+        <div class="dragon"><span>Emeriss</span> <span class="medium">Medium</span></div>
+        <p>Use a <a href="https://www.wowhead.com/classic-ptr/item=13459/greater-shadow-protection-potion">Greater Shadow Protection Potion</a> before this fight.</p>
+        <ul class="ab">
+            <li><img src="img/p09_04_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=24871/spore-cloud">Spore Cloud:</a> When a player dies they transform into a poisonous mushroom which deals massive, constant damage. Avoid at all costs. If there are multiple mushrooms it is likely a wipe.</li>
+            <li><img src="img/p09_05_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=24928/volatile-infection">Volatile Infection:</a> A disease that inflicts nature damage to the target and nearby allies. Cleanse it.</li>
+        </ul>
+        <h3>Emeriss at 75%, 50% &amp; 25% Health:</h3>
+        <ul class="ab">
+            <li><img src="img/p10_00_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=24910/corruption-of-the-earth">Corruption of the Earth:</a> Reduces raid health by 20% every 2 seconds for 10 seconds. Players should use a Healthstone, major healing potion, or Greater Shadow Protection Potion, or apply defensives (e.g., Bulwark of the Righteous) during each damage period. Druids should coordinate Tranquility casts.
+                <ul>
+                    <li>Priests should avoid applying Prayer of Fortitude, as it increases healing requirements and mana usage. The raid can stack in melee, and priests may place Lightwells there.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="box">
+            <h2>Summoning the Green Dragons</h2>
+            <ol>
+                <li>Loot the <a href="https://database.turtlecraft.gg/?item=42165#objective-of">Wail of Ysera</a> from the Favor of Erennius in Emerald Sanctum (Hard Mode)</li>
+                <li>Collect 10x <a href="https://database.turtlecraft.gg/?item=61199">Bright Dream Shard</a></li>
+                <li>Hand in the quest at the Stone of Dreams at one of the following locations, depending on which dragon you want to summon:
+                    <ol type="a">
+                        <li>Ashenvale: Lethon</li>
+                        <li>Feralas: Ysondre</li>
+                        <li>Duskwood: Taerar</li>
+                        <li>Hinterlands: Emeriss</li>
+                    </ol>
+                </li>
+            </ol>
+            <p>The Stone of Dreams is found in front of the portals where the dragons normally spawn.</p>
+        </div>
+
+        <img class="hero" src="img/p10_01_1920x946.png" alt="Nerubian Overseer" id="nerubian">
+        <h1>Nerubian Overseer</h1>
+        <p class="meta">Eastern Plaguelands | 20 - 30 Man | T2 | <span class="medium">Medium</span></p>
+        <p>The <a href="https://database.turtlecraft.gg/?npc=16184">Nerubian Overseer</a> wanders the Terrorweb Tunnel in Eastern Plaguelands. The encounter revolves around dispels, positioning, and correctly handling his web wrap mechanic.</p>
+        <ul class="ab ab56">
+            <li><img src="img/p10_02_56x56.png" alt=""> <b>Web Wrap:</b> Periodically targets the furthest player from the boss. After approximately 7–8 seconds, the target is wrapped in a web and dies. If a player dies, multiple spiderling adds spawn from their corpse which apply a massive healing reduction to their targets.</li>
+            <li><img src="img/p10_03_56x56.png" alt=""> <b>Poison/Disease:</b> Periodic DoT application to raid members. Cleansing is top priority.</li>
+            <li><img src="img/p10_04_56x56.png" alt=""> <b>Poison Cloud:</b> Periodically drops poison clouds beneath random players dealing heavy damage. Must be moved out of.</li>
+            <li><b>Web:</b> A regular web cast on random raid members. Removable with Hand of Freedom or similar. Minimal impact with correct positioning but problematic if adds spawn.</li>
+        </ul>
+        <p>Web Wrap targets the furthest player from the boss and kills them after approximately 7-8 seconds. Designate several paladins and mages as soakers, forming a line behind the ranged group. The furthest player pre-casts their immunity as Web Wrap is incoming. Divine Shield or Ice Block must be active before the debuff lands, as you cannot cast them in reaction to it. After absorbing the debuff, the soaker walks forward through the line and the next soaker steps to the back. Ensure you are in combat before having to soak.</p>
+        <p>Maintain an aggressive dispel rotation on poison/disease and kill any adds that spawn immediately.</p>
+        <div class="box">
+            <h2>Summoning Nerubian Overseer</h2>
+            <ol>
+                <li>Loot the <a href="https://database.turtlecraft.gg/?item=42167">Crypt Lord's Beckoning</a> from <a href="https://database.turtlecraft.gg/?npc=15956">Anub’Rekhan</a> in Naxxramas.</li>
+                <li>Get 10x <a href="https://database.turtlecraft.gg/?item=42168">Hallowed Cross</a> from Scarlet Crusade elites in Tyr’s Hand.</li>
+                <li>Hand in the quest to <a href="https://database.turtlecraft.gg/?npc=1855">Tirion Fordring</a> in the Western Plaguelands.</li>
+            </ol>
+        </div>
+
+        <img class="hero" src="img/p11_01_1885x1062.png" alt="Lord Kazzak" id="kazzak">
+        <h1>Lord Kazzak</h1>
+        <p class="meta">Blasted Lands | 15 - 20 man | T1 | <span class="easy">Easy</span></p>
+        <p><a href="https://www.wowhead.com/classic/npc=12397/lord-kazzak">Lord Kazzak</a> is a doomlord located in the south-western edge of the Blasted Lands in the Tainted Scar. Kazzak commands the Burning Legion forces stranded after the Third War, following the Legion's defeat at Mount Hyjal. Unlike most demon commanders, Kazzak relishes direct combat and wields Archimonde's greatsword. His sole purpose is reopening the Dark Portal to escape back to Outland.</p>
+
+        <div class="split">
+            <div class="left">
+                <h2>Lord Kazzak Abilities:</h2>
+                <ul class="ab">
+                    <li><img src="img/p11_02_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=21053/capture-soul">Capture Soul:</a> Upon a player death Lord Kazzak will heal for 70,000+ health</li>
+                    <li><img src="img/p11_03_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=5532/cleave">Cleave:</a> Frontal cleave. Tanks only in front.</li>
+                    <li><img src="img/p11_04_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=21056/mark-of-kazzak">Mark of Kazzak:</a> Targets a caster to lose mana over time, if they get to 0 mana, they explode for 6,000 damage. Can be dispelled</li>
+                    <li><img src="img/p11_05_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=15245/shadow-bolt-volley">Shadow Bolt Volley:</a> AoE shadow bolts, ignores LoS</li>
+                    <li><img src="img/p11_06_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=8078/thunderclap">Thunderclap:</a> damages and slows attack speed and movement of targets</li>
+                    <li><img src="img/p11_07_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=21063/twisted-reflection">Twisted Reflection:</a> heals <a href="https://www.wowhead.com/classic/npc=12397/lord-kazzak">Lord Kazzak</a> for 25,000 if he hits a player afflicted with it; can be dispelled</li>
+                    <li><img src="img/p11_08_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=7588/void-bolt">Void Bolt:</a> Powerful single target shadow spell.</li>
+                </ul>
+            </div>
+            <div class="right">
+                <img src="img/p11_09_396x471.png" alt="Blasted Lands map">
+            </div>
+        </div>
+
+        <p>Players must kill him in under 3 minutes or he becomes enraged.</p>
+        <p>Unless you're a tank, avoid standing in front of him. Decurse <a href="https://www.wowhead.com/classic/spell=21063/twisted-reflection">Twisted Reflection</a> as a priority. If a caster has <a href="https://www.wowhead.com/classic/spell=21056/mark-of-kazzak">Mark of Kazzak</a> and uses all their mana, they'll turn into a bomb. Dispel this immediately, and have mana users keep a close watch on their mana pool.</p>
+
+        <div class="box">
+            <h2>Summoning Lord Kazzak</h2>
+            <ol>
+                <li>Loot the <a href="https://database.turtlecraft.gg/?item=42180">Twisting Rift Crystal</a> from Majordomo Executus’s chest in Molten Core.</li>
+                <li>Get 10x <a href="https://database.turtlecraft.gg/?item=42181">Netherrich Demon Blood</a> from demons in the Blasted Lands or Winterspring.</li>
+                <li>Hand in the quest to the <a href="https://database.turtlecraft.gg/?npc=14463">Daio the Decrepit</a> in the Blasted Lands.</li>
+            </ol>
+        </div>
+
+        <img class="hero" src="img/p12_02_1587x858.png" alt="Moo" id="moo">
+        <h1>Moo</h1>
+        <p class="meta">Moomoo Grove (Secret Cow Level) | 5 Man | T0 | <span class="easy">Easy</span></p>
+        <p>Moo is found in Moomoo Grove, which can only be accessed by completing the obscure quest line. Warlocks can no longer summon un-attuned people into Moomoo Grove.</p>
+        <p>Fire, Frost, and Shadow Protection potions are useful here. Frost resistance gear can reduce incoming damage significantly. Despite being in a unique zone it is possible to use World Buffs for this boss.</p>
+
+        <div class="split">
+            <div class="left">
+                <h2>Moo Abilities:</h2>
+                <ul class="ab">
+                    <li><img src="img/p12_00_15x15.png" alt=""> <b>Frost Bolt Volley</b> and <img src="img/p12_01_15x15.png" alt=""> <b>Shadow Bolt Volley:</b> Damages all members of the raid.</li>
+                    <li><img src="img/p12_03_15x15.png" alt=""> <b>Firebolt:</b> Cast periodically on the tank.</li>
+                    <li><img src="img/p12_04_15x15.png" alt=""> <b>Charge:</b> Charges random people, knocking them down, then returns to the tank. He will not charge targets in melee range.</li>
+                </ul>
+                <h2>How to find Moo</h2>
+                <ol>
+                    <li>Kill Cows in Elwynn Forest until you find a <a href="https://database.turtlecraft.gg/?search=mysterious+cow+scroll">Mysterious Cow Scroll</a> (1-2% drop). Accept Mysterious Cow Scroll I.
+                        <ol type="a">
+                            <li><b>First clue:</b> In the barn at the Brackwell Pumpkin Patch in Elwynn Forest.</li>
+                            <li><b>Second clue:</b> In the Gold Coast Quarry (Westfall), in a pile of dirt in the cave.</li>
+                            <li><b>Third clue:</b> In a grave at Raven Hill in Duskwood.</li>
+                            <li><b>Fourth clue:</b> On the north-west coast of Stranglethorn Vale.</li>
+                            <li><b>Final clue:</b> In a burned down hut in the Serpents Coil in Blasted Lands.</li>
+                        </ol>
+                    </li>
+                    <li>Before handing in the quest you will need to find a <a href="https://www.wowhead.com/classic/item=13009/cow-kings-hide">Cow King’s Hide</a> and <a href="https://database.turtlecraft.gg/?item=9359">Wirt’s Third Leg</a>. The pirates in Tanaris drop the Leg.</li>
+                    <li>Find <a href="https://database.turtlecraft.gg/?npc=91798">Bessy</a> at Heroes Vigil in Elwynn Forest. Hand in the rare items and the Scroll of Cow Portal received from following the clues. She teleports you to Moomoo Grove.</li>
+                    <li>Speak with Moo to begin the fight.</li>
+                </ol>
+            </div>
+            <div class="right">
+                <img src="img/p12_05_548x529.png" alt="Moomoo Grove map">
+                <img src="img/p12_06_1280x720.png" alt="Moo">
+            </div>
+        </div>
+
+        <div class="box">
+            <p>This is the route I used to farm the cows. The cow by the gardening house outside Stormwind respawns every 30 seconds.</p>
+            <p class="center"><a href="https://youtu.be/XA24RDDJehw">Cow Attunement Farming Route</a></p>
+        </div>
+
+        <img class="hero" src="img/p13_00_792x512.png" alt="Ostarius" id="ostarius">
+        <h1>Ostarius</h1>
+        <p class="meta">Tanaris | 40 Man | T2 | <span class="hard">Hard</span></p>
+        <p>Ostarius is an ancient Titan construct guarding the sealed gates of Uldum in southern Tanaris. Designed to protect the Titans' deepest secrets, Ostarius has stood vigil for millennia and will obliterate any who trespass.</p>
+        <p>This is a three-phase encounter with phase transitions at 50% and 30% health. The fight takes place in an area with level 47+ elite wandering stone giants.</p>
+
+        <div class="split">
+            <div class="left">
+                <h2>Ostarius Mechanics:</h2>
+                <h3>Phase 1: 100% - 50% Health</h3>
+                <ul class="ab ab56">
+                    <li><img src="img/p13_01_56x56.png" alt=""> <b>Shield:</b> High damage AoE around boss, who remains stationary. Requires heavy tank healing.</li>
+                    <li><img src="img/p13_02_56x56.png" alt=""> <b>Teleport:</b> Pulls a nearby player into his AOE if there is nobody in melee range. A tank must stay at his feet to avoid this.</li>
+                    <li><img src="img/p13_03_56x56.png" alt=""> <b>Portals:</b> Spawn around the arena and summon adds. Melee DPS close portals with a 5 second interact. Close quickly to prevent adds.</li>
+                    <li><img src="img/p13_04_56x56.png" alt=""> <b>Portal Adds:</b> Cast single-target stuns and frontal cone fire. Melee stun and kite adds away from portals. Ranged kill adds while damaging boss. Can be banished.</li>
+                </ul>
+                <h3>Phase 2: 50% - 30% Health</h3>
+                <ul class="ab ab56">
+                    <li><img src="img/p13_05_56x56.png" alt=""> <b>Dwarven Guardians:</b> Stationary constructs spawn at arena edges. Cannot be targeted or damaged.
+                        <ul class="ab ab56">
+                            <li><img src="img/p13_06_56x56.png" alt=""> <b>Rain of Fire:</b> Ground-targeted fire damage from guardians. Dodge them.</li>
+                            <li><img src="img/p13_07_56x56.png" alt=""> <b>Frost Breath:</b> Frontal cone attack from guardians. Stay clear of their facing directions.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Portals and adds continue. Ranged focus boss while avoiding abilities and ground effects.</p>
+            </div>
+            <div class="right">
+                <img src="img/p13_08_691x307.png" alt="Ostarius arena">
+                <img src="img/p13_09_988x653.png" alt="Tanaris map">
+            </div>
+        </div>
+
+        <h3>Phase 3: 30% - 0% Health</h3>
+        <ul>
+            <li><b>Burn Phase:</b> All DPS attack Ostarius. The shield spell ends, but Rain of Fire and Frost Breath continue. Dodge ground effects and kill the boss.</li>
+            <li><b>Silence:</b> An AOE silence that can be dispelled (magic).</li>
+        </ul>
+
+        <div class="box">
+            <h2>Summoning Ostarius</h2>
+            <ol>
+                <li>Get the quest <a href="https://database.turtlecraft.gg/?quest=40100">Unusual Partnership</a> from <a href="https://database.turtlecraft.gg/?npc=5387">High Explorer Magellas</a> in the Ironforge Hall of Explorers.</li>
+                <li>Hand the quest in at <a href="https://database.turtlecraft.gg/?npc=60400">Vess</a> in Booty Bay, inside the Inn. Pick up <a href="https://database.turtlecraft.gg/?quest=40101">Original Owner</a>.</li>
+                <li>Go to Jaguero Isle, east of Booty Bay. Kill <a href="https://database.turtlecraft.gg/?npc=60401">Bannor</a> on the east side of the island and loot the quest item. Return to Vess and pick up <a href="https://database.turtlecraft.gg/?quest=40102">What Lurks in the Dark</a>.</li>
+                <li>Return to <a href="https://database.turtlecraft.gg/?npc=5387">High Explorer Magellas</a> in Ironforge and pick up <a href="https://database.turtlecraft.gg/?quest=40103">The Race</a>.</li>
+                <li>Go to Ungoro Crater and find the Pedestal in the mountains to the north, east of Marshal’s Refuge.</li>
+                <li>Kill 6 Stone Guardians (60-61 Elite) wandering Ungoro, then return to High Explorer Magellas in Ironforge. Pick up <a href="https://database.turtlecraft.gg/?quest=40104">The Missing Expedition</a>.</li>
+                <li>Turn in the quest in the south-east of Swamp of Sorrows. Pick up <a href="https://database.turtlecraft.gg/?quest=40105">Pride of the Dwarves</a>.</li>
+                <li>Go north of the lake and kill the group of cultists. Loot the Second Plate of Uldum and return to High Explorer Magellas in Ironforge. Pick up <a href="https://database.turtlecraft.gg/?quest=40106">Gates of Uldum</a>.</li>
+                <li>Travel to the Ostarius spawn point. Hand in the quest at the pedestal and pick up <a href="https://database.turtlecraft.gg/?quest=40107">Gate Keeper</a>, which can only be handed in when the boss is spawnable. Taking this quest spawns Ostarius.</li>
+            </ol>
+            <p>You can only pick up the final quest if Ostarius is within his spawn window. He has been spotted outside of this known spawn window but the exact mechanism isn’t clear.</p>
+            <p><b>Note:</b> Once you complete the quest to kill Ostarius, you permanently lose the ability to summon him. If you instead delete the quest after killing him you can pick it up again at the Pedestal and summon him again next time.</p>
+        </div>
+
+        <h2>Ostarius Respawn</h2>
+        <div class="split">
+            <div class="left">
+                <p>Ostarius resets fortnightly, straight after server reset, and possibly a second time during the week (unconfirmed). The pedestal that summons Ostarius has three interaction states. While the options change, there is no meaningful difference between state 1 and state 2. Ostarius will not spawn early based on pedestal state. He only becomes available at his fixed, predictable spawn time. Because of this, the only state that actually matters is whether the quest hand in is available.</p>
+                <p><b>State 1: You could swear its humming:</b> This is the earliest and most common state.</p>
+                <p><b>State 2: The pedestal is recharging:</b> This is a rarer state. It may appear within a certain time frame [Unverified]. It reverts back to stage 1.</p>
+                <p><b>State 3: Hand in available:</b> This means the quest is ready to hand in and the boss is spawnable.</p>
+                <p>A <a href="https://www.wowhead.com/classic/object=131474/the-discs-of-norgannon">separate quest</a> picked up at the end of the Uldaman dungeon also leads to this pedestal. If completed, the pedestal gains an additional dialogue option to Summon Stone Watcher, which summons a holographic creature for lore dialogue. This interaction is completely unrelated to Ostarius. It does not affect spawning in any way.</p>
+            </div>
+            <div class="right stack">
+                <img class="ped" src="img/p14_00_2048x1152.png" alt="Uldum Pedestal">
+                <img class="ped" src="img/p14_01_382x119.png" alt="Pedestal humming">
+                <img class="ped" src="img/p14_02_385x154.png" alt="Pedestal recharging">
+            </div>
+        </div>
+
+        <img class="hero" src="img/p15_01_1536x1024.png" alt="Father Lycan" id="lycan">
+        <h1>Father Lycan</h1>
+        <p class="meta">Hyjal | 120 Man | T3 | <span class="extreme">Extreme</span></p>
+        <p>Father Lycan is a worgen pricolich and bloodmage from Vorgendor who taught the Harlow family blood magic, corrupting Gilneas’ nobility. He is summoned at the Circle of Power in Hyjal. His death facilitates the cleansing of the <a href="https://database.turtlecraft.gg/?item=61184">Scythe of Elune</a>.</p>
+        <div class="note"><b>Note:</b> Father Lycan is a quest world boss and drops no loot. This encounter is by far the most challenging world boss in the game.</div>
+        <h2>Phase 1:</h2>
+        <ul class="ab ab56">
+            <li><img src="img/p15_00_56x56.png" alt=""> <b>Doombolt:</b> ~18000 shadow damage. Must be interrupted.</li>
+            <li><b>Worgen Adds:</b> Two portals, one on each side of the lake, constantly spawn a large number of Worgen with 12500 health each.</li>
+        </ul>
+        <img class="map" src="img/p15_02_660x411.png" alt="Hyjal Circle of Power" style="width:100%;">
+
+        <img class="hero" src="img/p16_00_1536x1024.png" alt="Interesting Items Guide" id="items">
+        <ul class="stars-list">
+            <li>★ <a href="#reflect">Reflect:</a> Items that deal automatic damage back to attackers when you are hit or block.</li>
+            <li>★ <a href="#struck">Chance When Struck:</a> Items that trigger an effect when you take damage or block an attack.</li>
+            <li>★ <a href="#attacks">X to your Attacks:</a> Items that add flat damage to every attack you make.</li>
+            <li>★ <a href="#vampirism">Vampirism:</a> Items that restore health based when you deal damage.</li>
+            <li>★ <a href="#beast">Beast Slaying:</a> Items that deal additional damage to beasts.</li>
+            <li>★ <a href="#swim">Swim Speed:</a> Items that increase your swimming speed.</li>
+            <li>★ <a href="#mount">Mount Speed:</a> Items that increase your mounted speed.</li>
+            <li>★ <a href="#fishing">Fishing Items:</a> Items that increase your fishing skill.</li>
+            <li>★ <a href="#breath">Water Breathing:</a> Items that allow you to breathe underwater.</li>
+            <li>★ <a href="#stealth">Stealth Level:</a> Items that decrease the chance you will be seen in stealth.</li>
+            <li>★ <a href="#detect">Stealth Detection:</a> Items that increase the chance to see through stealth.</li>
+            <li>★ <a href="#armor">High Armor Items:</a> WIP</li>
+            <li>★ <a href="#block">Block Chance Items:</a> WIP</li>
+        </ul>
+        <div class="toc-box">If you use the <a href="https://github.com/Skillkrote/Bagshui">Bagshui Addon</a> you can use the <b>Bagshui Item Copy</b> button in the top toolbar to create an import list for each category.</div>
+
+        <div class="banner" id="reflect">
+            <img src="img/p17_00_56x56.png" alt="">
+            <div>
+                <h2>Reflect Items</h2>
+                <p>These items deal automatic damage back to attackers when you are hit or block, without requiring a proc chance.</p>
+            </div>
+        </div>
+
+        <div class="slot">Head</div>
+        <table>
+            <tr><th>Item</th><th>Damage</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=9492">Electromagnetic Gigaflux Reactivator</a></td><td><span class="nature">5 Nature</span> (10 min buff)</td><td class="found">Gnomeregan: Mekgineer Thermaplugg</td></tr>
+        </table>
+        <div class="slot">Neck</div>
+        <table>
+            <tr><th>Item</th><th>Damage</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=17782">Talisman of Binding Shard</a></td><td><span class="nature">4 Nature</span></td><td class="found">Molten Core: Garr</td></tr>
+        </table>
+        <div class="slot">Back</div>
+        <table>
+            <tr><th>Item</th><th>Damage</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=3475">Cloak of Flames</a></td><td><span class="fire">5 Fire</span></td><td class="found">Raid BOE</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58190">Razorskin Cape</a></td><td><span class="nature">3 Nature</span></td><td class="found">Stormwrought Descent: Eldermaw the Primordial</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=51757">Woven Ivy Cloak</a></td><td><span class="nature">1 Nature</span></td><td class="found">Quest: Bring Down the Priestess!</td></tr>
+        </table>
+        <div class="slot">Shoulder</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Damage</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=81005">Spiked Defias Spaulders</a></td><td>Mail</td><td><span class="arcane">1 Arcane</span></td><td class="found">Deadmines: Edwin Van Cleef</td></tr>
+        </table>
+        <div class="slot">Gloves</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Damage</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=18326">Razor Gauntlets</a></td><td>Plate</td><td><span class="arcane">3 Arcane</span></td><td class="found">Dire Maul: East: Alzzin the Wildshaper</td></tr>
+        </table>
+        <div class="slot">Ring</div>
+        <table>
+            <tr><th>Item</th><th>Damage</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61051">Blackthorn Band</a></td><td><span class="nature">4 Nature</span></td><td class="found">Black Morass: Mossheart</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=11669">Naglering</a></td><td><span class="arcane">3 Arcane</span></td><td class="found">Blackrock Depths: Golem Lord Argelmach</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=5007">Band of Thorns</a></td><td><span class="nature">1 Nature</span></td><td class="found">World Drop</td></tr>
+        </table>
+        <div class="slot">Trinket</div>
+        <table>
+            <tr><th>Item</th><th>Damage</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=18815">Essence of the Pure Flame</a></td><td><span class="fire">13 Fire</span></td><td class="found">Molten Core: Ragnaros</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=83224">Horn of Engryss</a></td><td><span class="nature">4 Nature</span></td><td class="found">The Crescent Grove: Grovetender Engryss</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=84504">Lasher’s Whip</a></td><td><span class="nature">4 Nature</span></td><td class="found">Emerald Sanctum: Trash</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58090">Seed of Writhing Growth</a></td><td><span class="nature">3 Nature</span></td><td class="found">Razorfen Kraul: Rotthorn</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61059">Mossheart’s Heart</a></td><td><span class="nature">1 Nature</span></td><td class="found">Black Morass: Mossheart</td></tr>
+        </table>
+        <div class="slot">Weapon</div>
+        <table>
+            <tr><th>Item</th><th>Damage</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=17182">Sulfuras, Hand of Ragnaros</a></td><td><span class="fire">5 Fire</span></td><td class="found">Blacksmithing / Legendary</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=80751">Thornclad Warhammer</a></td><td><span class="nature">3 Nature</span></td><td class="found">Maraudon: Trash Mobs</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=11809">Flame Wrath</a></td><td><span class="fire">10 Fire</span></td><td class="found">Blackrock Depths: Ambassador Flamelash (25%) (.01%)</td></tr>
+        </table>
+        <div class="slot">Shield</div>
+        <table>
+            <tr><th>Item</th><th>Damage</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58242">Sulfuron Aegis</a></td><td><span class="fire">4 Fire</span></td><td class="found">Molten Core: Basalthar &amp; Smoldaris/Sorcerer-Thane Thaurissan (16.67%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=17066">Drillborer Disk</a></td><td><span class="arcane">3 Arcane</span></td><td class="found">Molten Core: Garr (17%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=13375">Crest of Retribution</a></td><td><span class="phys">5–35 Physical</span></td><td class="found">Stratholme (Undead): Ramstein the Gorger (14%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=1204">The Green Tower</a></td><td><span class="nature">3 Nature</span></td><td class="found">BOE: World drop</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61370">Bristlehide Buckler</a></td><td><span class="nature">1 Nature</span></td><td class="found">Mulgore: Chief Sharptusk Thornmantle (3%), Bristleback Shaman (0.02%), Bristleback Quilboar (0.02%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=81311">Technician's Servoshield</a></td><td><span class="arcane">1 Arcane</span></td><td class="found">Razzle Longpipe (<span class="red">Horde Only Vendor</span>)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=41047">Barnacle Targe</a></td><td><span class="nature">1 Nature</span></td><td class="found">Blackstone Island: The Snipper <a href="https://database.turtlecraft.gg/?npc=61792">Rare</a> (50%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=6042">Iron Shield Spike</a></td><td><span class="phys">11-18 Physical</span></td><td class="found">Blacksmithing [150]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=7967">Mithril Shield Spike</a></td><td><span class="phys">16-20 Physical</span></td><td class="found">Blacksmithing: [215]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=12645">Thorium Shield Spike</a></td><td><span class="phys">20-30 Physical</span></td><td class="found">Blacksmithing: [275]</td></tr>
+        </table>
+
+        <h2>Reflect Buffs</h2>
+        <div class="buffs">
+            <div><img src="img/p18_00_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=10301/retribution-aura">Retribution Aura</a> <span class="holy">20 Holy</span></div>
+            <div><img src="img/p18_01_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=11771/fire-shield">Fire Shield</a> <span class="fire">13 Fire</span></div>
+            <div><img src="img/p18_02_15x15.png" alt=""> <a href="https://www.wowhead.com/classic/spell=10432/lightning-shield">Lightning Shield</a> <span class="nature">198 Nature</span></div>
+            <div><img src="img/p18_03_15x15.png" alt=""> <a href="https://database.turtlecraft.gg/?spell=9910">Thorns</a> <span class="nature">18 Nature</span></div>
+            <div><img src="img/p18_04_15x15.png" alt=""> <a href="https://database.turtlecraft.gg/?item=11567">Crystal Spire</a> <span class="phys">12 Physical</span></div>
+            <div><img src="img/p18_05_15x15.png" alt=""> <a href="https://database.turtlecraft.gg/?item=8956">Oil of Immolation</a> <span class="fire">50 Fire within 5 yards every 3 sec.</span></div>
+        </div>
+
+        <div class="banner" id="struck">
+            <img src="img/p18_06_56x56.png" alt="">
+            <div>
+                <h2>Chance When Struck Items</h2>
+                <p>These items have a percentage chance to trigger a special effect when you take damage or block an attack.</p>
+            </div>
+        </div>
+        <div class="slot">Chest</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>When Struck</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=1981">Icemail Jerkin</a></td><td>Mail</td><td>Chance to freeze the attacker in place for 3 sec.</td><td class="found">World Drop</td></tr>
+        </table>
+        <div class="slot">Shoulder</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>When Struck</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=65014">Pauldron of Deflection</a></td><td>Plate</td><td>2% chance to return with a counterattack.</td><td class="found">Blacksmithing</td></tr>
+        </table>
+        <div class="slot">Legs</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>When Struck</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=55502">Iceplated Leggings</a></td><td>Leather</td><td>10% chance to deal 35 to 44 Frost damage and slow the attacker’s attack and movement speed by 5% for 12 sec, stacking up to 5 times.</td><td class="found">Azshara: Cla’ckora (World Boss)</td></tr>
+        </table>
+        <div class="slot">Ring</div>
+        <table>
+            <tr><th>Item</th><th>When Struck</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=942">Freezing Band</a></td><td>1% chance to deal 50 Frost damage to the attacker and freeze them for 5 sec.</td><td class="found">World Drop</td></tr>
+        </table>
+        <div class="slot">Shield</div>
+        <table>
+            <tr><th>Item</th><th>When Struck</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=13375">Crest of Retribution</a></td><td>When the shield blocks, damage the attacker for 5-35 Physical damage.</td><td class="found">Stratholme: Ramstein the Gorger (14%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=18168">Force Reactive Disk</a></td><td>When the shield blocks, damage all nearby enemies for 25-35 Nature damage.</td><td class="found">Engineering [300]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=1168">Skullflame Shield</a></td><td>3% chance to steal 35 life from the attacker. 1% chance to deal 75 to 125 Fire damage to all nearby enemies.</td><td class="found">World Drop</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=1204">The Green Tower</a></td><td>1% chance to gain a shield dealing 3 Nature damage to attackers and granting 50 Nature resistance for 30 sec.</td><td class="found">World Drop</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=1979">Wall of the Dead</a></td><td>3% chance to increase armor by 150 for 20 sec.</td><td class="found">World Drop</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=18825">Grand Marshall’s Aegis</a></td><td>5% chance to deal 35-65 Nature damage to the attacker.</td><td class="found">Rank 14 Honor</td></tr>
+        </table>
+
+        <div class="banner" id="attacks">
+            <img src="img/p19_00_56x56.png" alt="">
+            <div>
+                <h2>X to your Attacks Items</h2>
+                <p>These items add flat damage to every successful attack you make.</p>
+            </div>
+        </div>
+        <div class="slot">Neck</div>
+        <table>
+            <tr><th>Item</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=17111">Blazefury Medallion</a></td><td><span class="fire">2 Fire</span></td><td class="found">Blasted Lands: <a href="https://database.turtlecraft.gg/?npc=12397">Lord Kazzak</a> (World Boss) (20%)</td></tr>
+        </table>
+        <div class="slot">Shoulders</div>
+        <table>
+            <tr><th>Item</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=60572">Incendosaur Skin Pauldrons</a></td><td><span class="fire">2 Fire</span></td><td class="found">Hateforge Quarry: Outside Instance Elites (0.01%)</td></tr>
+        </table>
+        <div class="slot">Back</div>
+        <table>
+            <tr><th>Item</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=81308">Thunder Lizard’s Hide</a></td><td><span class="nature">3 Nature</span></td><td class="found">Razzle Longpipe (<span class="red">Horde Only Vendor</span>) Cost: <span class="gold">7g</span> 50s</td></tr>
+        </table>
+        <div class="slot">Chest</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=9469">Gahz'rilla Scale Armor</a></td><td>Mail</td><td><span class="nature">3 Nature</span></td><td class="found">Zul’Farrak: Gahz’rilla (50%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=80704">Lavadrenched Chainmail</a></td><td>Mail</td><td><span class="fire">2 Fire</span></td><td class="found">Ragefire Chasm: Bazzalan (30%)</td></tr>
+        </table>
+        <div class="slot">Gloves</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=81267">Flameskin Gloves</a></td><td>Leather</td><td><span class="fire">2 Fire</span></td><td class="found">Ashenvale: <a href="https://database.turtlecraft.gg/?npc=3773">Akkrilus (Rare)</a> (75%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=60582">Incendosaur Skin Gloves</a></td><td>Leather</td><td><span class="fire">2 Fire</span></td><td class="found">Hateforge Quarry Trash Mobs: (0.005%)</td></tr>
+        </table>
+        <div class="slot">Legs</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61505">Leggings of Fiery Temper</a></td><td>Leather</td><td><span class="fire">2 Fire</span></td><td class="found">Stonetalon Mountains: <a href="https://database.turtlecraft.gg/?npc=61503">Blazespark (Rare)</a> (50%)</td></tr>
+        </table>
+        <div class="slot">Boots</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=60568">Incendosaur Skin Boots</a></td><td>Leather</td><td><span class="fire">2 Fire</span></td><td class="found">Hateforge Quarry: High Foreman Bargul Blackhammer (20%)</td></tr>
+        </table>
+        <div class="slot">Ring</div>
+        <table>
+            <tr><th>Item</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61332">Ring of Electrical Binding</a></td><td><span class="nature">3 Nature</span></td><td class="found">Gilneas City: Dustivan Blackcowl (25%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58209">Sizzling Pyrestone Aureole</a></td><td><span class="fire">2 Fire</span></td><td class="found">Molten Core: Incindis (20%)</td></tr>
+        </table>
+        <div class="slot">Weapon</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=80825">Flamestring Bow</a></td><td>Bow</td><td><span class="fire">4 Fire</span></td><td class="found">Western Plaguelands: Narillasanz (Rare) (33%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58207">Fist of the Flamewaker</a></td><td>Fist Weapon Off-Hand</td><td><span class="fire">4 Fire</span></td><td class="found">Molten Core: Incindis (20%)</td></tr>
+        </table>
+        <div class="slot">Off-Hand</div>
+        <table>
+            <tr><th>Item</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=65030">Repaired Electro-Lantern</a></td><td><span class="nature">3 Nature</span></td><td class="found"><a href="https://database.turtlecraft.gg/?npc=50070#teaches-ability">Survival [90]</a></td></tr>
+        </table>
+        <div class="slot">Extra</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?spell=51810">Judgement Battlegear/Battle Plate</a> (Set; Protection, Retribution)</td><td><span class="purple">Paladin</span></td><td><span class="holy">3 Holy</span></td><td class="found">3 set bonus, Stacks with either set</td></tr>
+        </table>
+
+        <div class="banner" id="vampirism">
+            <img src="img/p20_00_56x56.png" alt="">
+            <div>
+                <h2>Vampirism Items</h2>
+                <p>These items restore health equal to a percentage of the damage you deal.</p>
+            </div>
+        </div>
+        <div class="slot">Head</div>
+        <table>
+            <tr><th>Item</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=55113">Dreadslayer Horns</a></td><td><b>3%</b></td><td class="found">Upper Karazhan Halls: Sanv Tas’dal (14%)</td></tr>
+        </table>
+        <div class="slot">Shoulders</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61356">Dreamhide Mantle</a> (Leatherworking: 300)</td><td>Leather</td><td><b>1%</b></td><td class="found">Emerald Sanctum: Solnius the Awakener<br><a href="https://database.turtlecraft.gg/?item=61428">Pattern: Dreamhide Mantle</a> (4%)</td></tr>
+        </table>
+        <div class="slot">Back</div>
+        <table>
+            <tr><th>Item</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=51731">Venom Covered Cloak</a></td><td><b>2%</b></td><td class="found"><a href="https://database.turtlecraft.gg/?npc=16184">World Boss: Nerubian Overseer</a> (20%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61261">Battlescarred Cloak</a></td><td><b>1%</b></td><td class="found">Lower Karazhan Halls: Grizikil (14%)</td></tr>
+        </table>
+        <div class="slot">Chest</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=9473">Jinxed Hoodoo Skin</a></td><td>Leather</td><td><b>3%</b></td><td class="found">Zul’farrak: Shadowpriest Sezz'ziz (25%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61284">Vest of Encroaching Darkness</a></td><td>Cloth</td><td><b>2%</b></td><td class="found">Lower Karazhan Halls: Moroes (10%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=47208">Raiments Of Transcendence</a> <span class="purple">(Priest: Shadow)</span></td><td>Cloth</td><td><b>1%</b></td><td class="found">Blackwing Lair: Nefarion (11%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=4508">Blood-tinged Armor</a></td><td>Mail</td><td><b>1%</b></td><td class="found"><a href="https://database.turtlecraft.gg/?quest=646">Quest: Trol’kalar</a><br><span class="red">Horde Only</span></td></tr>
+        </table>
+        <div class="slot">Bracer</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61528">Aquis’ Bindings</a></td><td>Mail</td><td><b>1%</b></td><td class="found">Gillijim’s Isle: <a href="https://database.turtlecraft.gg/?npc=61518">Aquitus (Rare)</a> (20%)</td></tr>
+            <tr><td>Barkskin Elder Cuffs</td><td>Cloth</td><td><b>1%</b></td><td class="found"><a href="https://database.turtlecraft.gg/?quest=40891">Quest: The Corruption of the Barkskin Tribe</a></td></tr>
+        </table>
+        <div class="slot">Gloves</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61353">Blackthorn Gauntlets</a></td><td>Leather</td><td><b>2%</b></td><td class="found"><a href="https://database.turtlecraft.gg/?quest=40849">Quest: Genn Greymane Must Die!</a><br><span class="red">Horde Only</span></td></tr>
+        </table>
+        <div class="slot">Belt</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=47211">Sash of Transcendence</a> <span class="purple">(Priest: Shadow)</span></td><td>Cloth</td><td><b>1%</b></td><td class="found">Blackwing Lair: Vaelastrasz the Corrupt (11%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61331">Blackcowl Sash</a></td><td>Leather</td><td><b>1%</b></td><td class="found">Gilneas City: Dustivan Blackcowl (25%)</td></tr>
+        </table>
+        <div class="slot">Feet</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61281">Shadeweave Boots</a></td><td>Cloth</td><td><b>1%</b></td><td class="found">Lower Karazhan Halls: Clawlord Howlfang (20%)</td></tr>
+        </table>
+        <div class="slot">Ring</div>
+        <table>
+            <tr><th>Item</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=19302">Darkmoon Ring</a></td><td><b>2%</b></td><td class="found">Vendor: Darkmoon Faire (Elwynn Forest/Mulgore) Cost: <span class="gold">5g</span></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=55263">Twilight Opal Cascade</a></td><td><b>2%</b></td><td class="found">Jewelcrafting [300]</td></tr>
+        </table>
+        <div class="slot">Trinket</div>
+        <table>
+            <tr><th>Item</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=55363">Grail of Forgotten Memories</a></td><td><b>3%</b></td><td class="found">Jewelcrafting: Goldsmithing [300]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58175">Blood-etched Fetish</a></td><td><b>2%</b></td><td class="found">Razorfen Downs: Death Prophet Rakameg (25%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61263">Tooth of the Packlord</a></td><td><b>2%</b></td><td class="found">Karazhan 10: Clawlord Howlfang</td></tr>
+        </table>
+        <div class="slot">Weapon</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61571">Leeching Fang</a></td><td>Dagger Off-Hand</td><td><b>2%</b></td><td class="found">Caverns of Time: Black Morass Trash Mobs (0.0006%-0.0031%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61278">Vampiric Kris</a></td><td>Dagger</td><td><b>2%</b></td><td class="found">Lower Karazhan Halls: Brood Queen Araxxna (14%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61328">Wolfblood</a></td><td>2H Sword</td><td><b>2%</b></td><td class="found">Gilneas City: Genn Greymane (15%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=60294">Bloodstone Warblade</a></td><td>2H Sword</td><td><b>2%</b></td><td class="found">Vendor: Bind on Pickup Blacksmithing: (<a href="https://database.turtlecraft.gg/?item=83507">Plans: Bloodstone Warblade</a>)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61755">Stagwood Grasp</a></td><td>Fist Weapon Off-Hand</td><td><b>1%</b></td><td class="found"><a href="https://database.turtlecraft.gg/?quest=41058">Quest: Stagwood Grasp</a> 150 Bright Dream Shards</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61286">Bloodfang Effigy</a></td><td>Wand</td><td><b>1%</b></td><td class="found">Lower Karazhan Halls: Lord Blackwald II (14%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58116">Bloodstained Fangblade</a></td><td>Dagger</td><td><b>1%</b></td><td class="found">Zul’Farrak: Zel’Jeb the Ancient (25%)</td></tr>
+        </table>
+        <div class="slot">Vampirism Enhancements</div>
+        <table>
+            <tr><th>Item</th><th>Type</th><th>Adds</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=56006">Glowing Ruby Gemstone</a></td><td><img src="img/p22_00_15x15.png" alt="" style="width:16px;height:16px;vertical-align:middle;"> Gem</td><td><b>1%</b></td><td class="found">Jewelcrafting [200]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61738">Enchant Bracer: Vampirism</a></td><td><img src="img/p22_01_15x15.png" alt="" style="width:16px;height:16px;vertical-align:middle;"> Enchant</td><td><b>1%</b></td><td class="found">Enchanting [185]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61739">Enchant Boots: Vampirism</a></td><td><img src="img/p22_02_15x15.png" alt="" style="width:16px;height:16px;vertical-align:middle;"> Enchant</td><td><b>1%</b></td><td class="found">Enchanting [300]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=16254">Enchant Weapon: Lifestealing</a></td><td><img src="img/p22_03_15x15.png" alt="" style="width:16px;height:16px;vertical-align:middle;"> Enchant</td><td><b>30hp</b></td><td class="found">Enchanting [300]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61436">Sigil of Leeching</a></td><td>Enchant</td><td><b>2%</b></td><td class="found">Hyjal Shoulder Enchant - 5 Bright Dream Shard / 1 Fading Dream Fragment</td></tr>
+        </table>
+
+        <div class="banner" id="beast">
+            <img src="img/p23_00_56x56.png" alt="">
+            <div>
+                <h2>Beastslayer Items</h2>
+                <p>These items deal additional damage to beasts.</p>
+            </div>
+        </div>
+        <table>
+            <tr><th>Item</th><th>Slot</th><th>AP</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=7710">Loksey’s Training Stick</a></td><td>Weapon (Staff)</td><td>60</td><td class="found"><a href="https://database.turtlecraft.gg/?npc=3974">Houndmaster Loksey</a> - SM</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=7756">Dog Training Gloves</a></td><td>Hands - Leather</td><td>30</td><td class="found"><a href="https://database.turtlecraft.gg/?npc=3974">Houndmaster Loksey</a> - SM</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61520">The Golden Banana</a></td><td>Trinket</td><td>60</td><td class="found"><a href="https://database.turtlecraft.gg/?npc=61500">Highvale Silverback</a> - Telabim (Rare)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61565">Crochide Wrists</a></td><td>Bracers - Leather</td><td>48</td><td class="found">Black Morass - Trash - BOE</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=11906">Beastsmasher</a></td><td>Weapon (1h Mace)</td><td>30</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=4301">The Mighty U’cha</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=11907">Beastslayer</a></td><td>Weapon (2h Axe)</td><td>72</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=4301">The Mighty U’cha</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=13212">Halycon’s Spiked Collar</a></td><td>Neck</td><td>48</td><td class="found">Halycon (LBRS)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=12709">Finkle’s Skinner</a></td><td>Weapon (Dagger)</td><td>45</td><td class="found">The Beast (UBRS)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61248">Beasthunter’s Blunderbuss</a></td><td>Weapon (Gun)</td><td>39</td><td class="found"><a href="https://database.turtlecraft.gg/?npc=61223">Clawlord Howlfang</a> (Kara10)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=15783">Beasthunter Dagger</a></td><td>Weapon (Dagger)</td><td>33</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=5056">Shy-Rotam</a> <span class="red">(Horde Only)</span></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=15782">Beaststalker Blade</a></td><td>Weapon (1h Sword)</td><td>33</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=5056">Shy-Rotam</a> <span class="red">(Horde Only)</span></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=3566">Raptorbane Armor</a></td><td>Chest (Leather)</td><td>30</td><td class="found"><a href="https://database.turtlecraft.gg/?quest=296">Ormer’s Revenge</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=11628">Houndmaster’s Bow</a></td><td>Weapon (Bow)</td><td>24</td><td class="found"><a href="https://database.turtlecraft.gg/?npc=9319">Houndmaster Grebmar</a> - BRD</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=11629">Houndmaster’s Rifle</a></td><td>Weapon (Gun)</td><td>24</td><td class="found"><a href="https://database.turtlecraft.gg/?npc=9319">Houndmaster Grebmar</a> - BRD</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=1465">Tigerbane</a></td><td>Weapon (Dagger)</td><td>18</td><td class="found">World Drop</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=16658">Wildhunter Cloak</a></td><td>Back</td><td>18</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=247">The Hunt Completed</a> <span class="red">(Horde Only)</span></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=60525">Creeper Fang Necklace</a></td><td>Neck</td><td>15</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=40015">The Hunt for Heketh</a> <span class="red">(Horde Only)</span></td></tr>
+        </table>
+
+        <div class="banner" id="swim">
+            <img src="img/p24_00_56x56.png" alt="">
+            <div>
+                <h2>Swim Speed Items</h2>
+                <p>These items increase your swimming speed and can stack.</p>
+            </div>
+        </div>
+        <table>
+            <tr><th>Item</th><th>Slot</th><th>Speed</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=23100">Idol of Fluidity</a></td><td>Idol (Druid)</td><td>20% in Aquatic Form</td><td class="found">Gnaws (Rare)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=7052">Azure Silk Belt</a></td><td>Belt</td><td>15%</td><td class="found">Tailoring [175]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=83494">Captain’s Overcoat</a></td><td>Chest</td><td>15%</td><td class="found">Bloodsail Buccaneer Reputation (Revered)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=80720">Deep Striders</a></td><td>Boots</td><td>15%</td><td class="found">Blackfathom Depths: Gelihast</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=60470">Ice Pearl of Kaneq’nuun</a></td><td>Trinket</td><td>15%</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=40324">The Legend of Tarqsiku</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=56023">Ocean’s Gaze</a></td><td>Ring</td><td>15%</td><td class="found">Jewelcrafting [190]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=40061">Rethress Tide Crest</a></td><td>Trinket</td><td>15%</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=40061">Killing the Tide Lord</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=60860">Triskelion of Roving Elements</a></td><td>Trinket</td><td>8%</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=40629">An Honorary Gelkis</a> (Requires Honored with Gelkis Clan Centaur)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?itemset=441">Primal Batskin Set</a></td><td>Set Bonus</td><td>8%</td><td class="found">Leatherworking [300]</td></tr>
+        </table>
+        <table>
+            <tr><th>Item</th><th>Speed</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=19979">Hook of the Master Angler</a></td><td>25% (transforms you into a fish)</td><td class="found">Stranglethorn Fishing Extravaganza: <a href="https://database.turtlecraft.gg/?quest=8193">Master Angler</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=6372">Swim Speed Potion</a></td><td>100%</td><td class="found">Alchemy [100]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=41961">Fluidity Potion</a></td><td>100% (only in Balor)</td><td class="found">Vendor: <a href="https://database.turtlecraft.gg/?npc=62462">Elindra Swiftluck</a></td></tr>
+            <tr><td>Torta (Mount)</td><td>15%</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=40302">Torta’s Egg</a></td></tr>
+        </table>
+
+        <div class="banner" id="mount">
+            <img src="img/p24_01_15x15.png" alt="">
+            <div>
+                <h2>Mount Speed Items</h2>
+                <p>These items increase your mounted speed and can stack.</p>
+            </div>
+        </div>
+        <table>
+            <tr><th>Item</th><th>Slot</th><th>Speed</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=11226">Formula: Enchant Gloves - Riding Skill</a></td><td><img src="img/p24_02_15x15.png" alt="" style="width:16px;height:16px;vertical-align:middle;"> Enchant</td><td>2%</td><td class="found">Enchanting [250]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=11122">Carrot on a Stick</a></td><td><img src="img/p24_03_15x15.png" alt="" style="width:16px;height:16px;vertical-align:middle;"> Trinket</td><td>3%</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=2770">Gahz’rilla</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=60501">Whip of Encouragement</a></td><td>Trinket</td><td>3%</td><td class="found">Stormwind Vaults: <a href="https://database.turtlecraft.gg/?object=2010867">Vault Armory Equipment</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=50525">Goblin Car Key</a></td><td>Trinket</td><td>3%</td><td class="found">Daily Quest: <a href="https://database.turtlecraft.gg/?quest=50311">Mirage Raceway: Goblin’s Team</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=50524">Gnome Car Key</a></td><td>Trinket</td><td>3%</td><td class="found">Daily Quest: <a href="https://database.turtlecraft.gg/?quest=50313">Mirage Raceway: Gnome’s Team</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61182">Thorium Spurs</a></td><td>Spur</td><td>8%</td><td class="found">Blacksmithing [235]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=7969">Mithril Spurs</a></td><td><img src="img/p24_04_15x15.png" alt="" style="width:16px;height:16px;vertical-align:middle;"> Spur</td><td>4%</td><td class="found">Blacksmithing [275]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58296">Boots of the Slime Path</a></td><td>Boots (Mail)</td><td>3%</td><td class="found">Stormwrought Descent: Trash Mobs</td></tr>
+        </table>
+
+        <div class="banner" id="fishing">
+            <img src="img/p25_00_56x56.png" alt="">
+            <div>
+                <h2>Fishing Items</h2>
+                <p>These items increase your fishing skill, making it easier to catch fish.</p>
+            </div>
+        </div>
+        <h3>Fishing Poles</h3>
+        <table>
+            <tr><th>Item</th><th>Bonus</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=12225">Blump Family Fishing Pole</a></td><td>+3</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=1141">The Family and the Fishing Pole</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=6365">Strong Fishing Pole</a></td><td>+5</td><td class="found">Fishing Vendors</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=6366#fished-in">Darkwood Fishing Pole</a></td><td>+15</td><td class="found">Redridge Mountains, Hillsbrad Foothills: Fishing (0.02%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=6367">Big Iron Fishing Pole</a></td><td>+20</td><td class="found">Desolace: Shellfish Trap (1.5%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=19022">Nat Pagle's Extreme Angler FC-5000</a></td><td>+25</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=7815">Snapjaws, Mon!</a> <span class="red">(Horde Only)</span></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=84507">Barkskin Fisher</a></td><td>+30</td><td class="found">Hyjal: <a href="https://database.turtlecraft.gg/?npc=61487">Barkskin Fisher (Rare)</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=19970">Arcanite Fishing Pole</a></td><td>+35</td><td class="found">Stranglethorn Fishing Extravaganza: <a href="https://database.turtlecraft.gg/?quest=8193">Master Angler</a></td></tr>
+        </table>
+        <h3>Other Items</h3>
+        <table>
+            <tr><th>Item</th><th>Bonus</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=19972">Lucky Fishing Hat</a></td><td>+5</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=8221">Rare Fish - Keefer's Angelfish</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=84037">Undercity Bucket Hat</a></td><td>+5</td><td class="found">Undercity: Fishing (0.5%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=19969">Nat Pagle's Extreme Anglin' Boots</a></td><td>+5</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=8225">Rare Fish - Brownell’s Blue Striped Racer</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=19971">High Test Eternium Fishing Line</a></td><td>+5</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=8224">Rare Fish - Dezian Queenfish</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=11152">Formula: Enchant Gloves - Fishing</a></td><td>+2</td><td class="found">Hillsbrad Foothills: Random drop from Murlocs (2%)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=51282">Fishing Boat</a></td><td>+50</td><td class="found">Survival [75] - Lasts 1 hour</td></tr>
+        </table>
+
+        <div class="banner" id="breath">
+            <img src="img/p25_01_56x56.png" alt="">
+            <div>
+                <h2>Water Breathing Items</h2>
+                <p>These items allow you to breathe underwater.</p>
+            </div>
+        </div>
+        <table>
+            <tr><th>Item</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=9452">Hydrocane</a></td><td class="found"><a href="https://www.wowhead.com/classic/npc=220007/viscous-fallout">Viscous Fallout</a> (Gnomeregan)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=21526">Band of Icy Depths</a></td><td class="found">Quest: <a href="https://www.wowhead.com/classic/quest=8729/the-wrath-of-neptulon">The Wrath of Neptulon (Raid)</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=10506">Deepdive Helmet</a></td><td class="found">Engineering [230]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58079">Pearlescent Shard</a></td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=41711">Calming the Tempest</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=83491">Swashbuckler Captain’s Hat</a></td><td class="found" rowspan="4"><a href="https://database.turtlecraft.gg/?npc=80957">Bloodsail Buccaneer Reputation (Exalted)</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=83492">Raider Captain’s Hat</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=83490">Pillager Captain’s Hat</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=83493">Enforcer Captain’s Hat</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=65026">Depthstalker Helm</a></td><td class="found">Leatherworking [300]</td></tr>
+        </table>
+
+        <div class="banner" id="stealth">
+            <img src="img/p26_00_56x56.png" alt="">
+            <div>
+                <h2>Stealth Level</h2>
+                <p>These items increase your effective stealth level, making it harder for you to be discovered.</p>
+            </div>
+        </div>
+        <table>
+            <tr><th>Item</th><th>Slot</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=82951">X-52 Stealth Ocular Implants</a></td><td>Head</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=80605">The First Opening of The Dark portal</a></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=81007">Blackened Defias Mask</a></td><td>Head</td><td class="found">Deadmines: Mr Smite</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58033">Amber Shawl</a></td><td>Back</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=41678">An Amber Light</a> <span class="red">(Alliance Only)</span></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=61334">Cloak of the Dark Veil</a></td><td>Back</td><td class="found">Gilneas City - Dustivan Blackcowl</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=80518">Quel’dorei Assassins Boots</a></td><td>Boots</td><td class="found">Silvermoon Remnant Reputation (Revered)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=80618">Revantusk Stalker’s Boots</a></td><td>Boots</td><td class="found">Revantusk Trolls Reputation (Revered)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58074">Lightfooted Mokassins</a></td><td>Boots</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=41708">Stinging Lullaby</a> <span class="red">(Alliance Only)</span></td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=20255">Whisperwalk Boots</a></td><td>Boots</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=8236">The Azure Key</a> (Rogue Only)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=8197#created-by">Nightscape Boots</a></td><td>Boots</td><td class="found">Leatherworking [255]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58300">Whispershard Ring</a></td><td>Ring</td><td class="found">Stormwrought Descent: Trash Mobs</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=58298">Eye of the Forgotten Depths</a></td><td>Trinket</td><td class="found">Stormwrought Descent: Trash Mobs</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?spell=25083">Formula: Enchant Cloak - Stealth</a></td><td>Enchant</td><td class="found">Enchanting [300]</td></tr>
+        </table>
+
+        <div class="banner" id="detect">
+            <img src="img/p26_01_56x56.png" alt="">
+            <div>
+                <h2>Stealth Detection</h2>
+                <p>These items improve your ability to detect characters in stealth.</p>
+            </div>
+        </div>
+        <table>
+            <tr><th>Item</th><th>Slot</th><th>Found</th></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=10501">Catseye Ultra Goggles</a></td><td>Head</td><td class="found">Engineering [240]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=19998">Bloodvine Lens</a></td><td>Head</td><td class="found">Engineering [300]</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=60786">The Night Watchmen</a></td><td>Head</td><td class="found">World Drop (Level ~40)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=60436">Sightless Leather Hood</a></td><td>Head</td><td class="found">Stormwind Vaults: Black Bride</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=16555">General's</a> / <a href="https://database.turtlecraft.gg/?item=16448">Marshal's</a> Dragonhide Gloves</td><td>Gloves</td><td class="found">Rank 12 Honor - Druids</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=16397">Knight Lieutenant’s</a> / <a href="https://database.turtlecraft.gg/?item=16496">Blood Guard’s</a> Dragonhide Gauntlets</td><td>Gloves</td><td class="found">Rank 7 Honor - Druids</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=60853">Dyad of Twitching Elven Ears</a></td><td>Trinket</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=40616">One of Us</a> (Requires honoured with Magram Clan Centaur)</td></tr>
+            <tr><td><a href="https://database.turtlecraft.gg/?item=1434">Glowing Wax Stick</a></td><td>Use</td><td class="found">Quest: <a href="https://database.turtlecraft.gg/?quest=60">Kobold Candles</a> <span class="red">(Alliance Only)</span></td></tr>
+        </table>
+
+        <div class="banner" id="armor">
+            <img src="img/p27_00_56x56.png" alt="">
+            <div>
+                <h2>High Armor Items</h2>
+                <p>These items…Blurb placeholder</p>
+            </div>
+        </div>
+        <div class="slot">Head</div>
+        <table><tr><th>Item</th><th>Armor</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Neck</div>
+        <table><tr><th>Item</th><th>Armor</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Back</div>
+        <table><tr><th>Item</th><th>Armor</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Shoulder</div>
+        <table><tr><th>Item</th><th>Type</th><th>Damage</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td></tr></table>
+        <div class="slot">Gloves</div>
+        <table><tr><th>Item</th><th>Type</th><th>Damage</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td></tr></table>
+        <div class="slot">Ring</div>
+        <table><tr><th>Item</th><th>Armor</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Trinket</div>
+        <table><tr><th>Item</th><th>Armor</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Weapon</div>
+        <table><tr><th>Item</th><th>Armor</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Shield</div>
+        <table><tr><th>Item</th><th>Armor</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+
+        <div class="banner" id="block">
+            <img src="img/p27_01_56x56.png" alt="">
+            <div>
+                <h2>Block Chance Items</h2>
+                <p>These items…Blurb placeholder</p>
+            </div>
+        </div>
+        <div class="slot">Head</div>
+        <table><tr><th>Item</th><th>Block %</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Neck</div>
+        <table><tr><th>Item</th><th>Block %</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Back</div>
+        <table><tr><th>Item</th><th>Block %</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Shoulder</div>
+        <table><tr><th>Item</th><th>Block %</th><th>Found</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td></tr></table>
+        <div class="slot">Gloves</div>
+        <table><tr><th>Item</th><th>Block %</th><th>Found</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td><td></td></tr></table>
+        <div class="slot">Ring</div>
+        <table><tr><th>Item</th><th>Block %</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Trinket</div>
+        <table><tr><th>Item</th><th>Block %</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Weapon</div>
+        <table><tr><th>Item</th><th>Block %</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+        <div class="slot">Shield</div>
+        <table><tr><th>Item</th><th>Block %</th><th>Found</th></tr><tr><td>&nbsp;</td><td></td><td></td></tr></table>
+
     </div>
 </body>
 </html>
