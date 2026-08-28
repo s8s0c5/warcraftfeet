@@ -4,9 +4,10 @@
     <title>Warcraft Feet</title>
     <base href="/">
     <script>
-        if (sessionStorage.redirect) {
-            history.replaceState(null, '', sessionStorage.redirect);
-            delete sessionStorage.redirect;
+        var parts = location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+        if (parts[0] === 'warcraftfeet') parts.shift();
+        if (parts[0] !== 'feet') {
+            location.replace('/index.html');
         }
     </script>
     <style>
@@ -60,7 +61,7 @@
     </style>
 </head>
 <body>
-    <p><a href="/">home</a></p>
+    <p><a href="/index.html">home</a></p>
 
     <input type="text" id="search" placeholder="Search character name...">
     <button type="button" id="showall">show all</button>
@@ -70,6 +71,7 @@
     <script>
         const characters = [
             // Newest on top
+            { name: "leanus", image: "images/Leanus.JPG" },
             { name: "wouch", images: ["images/wouch1.JPG", "images/wouch2.JPG"] },
             { name: "bambi", image: "images/bambi.JPG" },
             { name: "roshiki", images: ["images/roshiki1.JPG", "images/roshiki2.JPG"] },
