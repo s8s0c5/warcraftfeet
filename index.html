@@ -20,7 +20,7 @@
         h1 {
             font-size: 20px;
             font-weight: normal;
-            margin: 0 0 20px;
+            margin: 0 0 32px;
         }
         p {
             margin: 0 0 10px;
@@ -29,14 +29,34 @@
         a {
             color: #1155cc;
         }
+        .feet a {
+            font-size: 48px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .tools {
+            margin-top: 96px;
+            font-size: 13px;
+            color: #888;
+        }
+        .tools p.label {
+            margin-bottom: 8px;
+            color: #aaa;
+        }
+        .tools a {
+            color: #888;
+        }
     </style>
 </head>
 <body>
     <main>
         <h1>warcraftfeet</h1>
-        <p><a href="/bosses">World boss guide</a></p>
-        <p><a href="https://calc.twow.warcraftfeet.com">Crafting calc</a></p>
-        <p><a href="/feet">feet</a></p>
+        <p class="feet"><a href="/feet">feet</a></p>
+        <div class="tools">
+            <p class="label">tools</p>
+            <p><a href="/bosses">World boss guide</a></p>
+            <p><a href="https://calc.twow.warcraftfeet.com">Crafting calc</a></p>
+        </div>
     </main>
 </body>
 </html>
