@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horde Rage Whispers</title>
+    <base href="/">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #search {
+            font-size: 18px;
+            padding: 10px;
+            width: 300px;
+            margin: 20px 0;
+        }
+        .person {
+            display: block;
+            margin: 40px auto;
+            text-align: center;
+        }
+        .person .whisper img {
+            max-width: 900px;
+            border: 2px solid #333;
+        }
+        .person .gank img {
+            max-width: 380px;
+            border: 1px solid #999;
+            margin-top: 12px;
+        }
+        .person h3 {
+            margin: 10px 0 4px;
+        }
+        .person .names {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+        #showall {
+            font-size: 18px;
+            padding: 10px 16px;
+            margin-left: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="/index.html">home</a></p>
+    <h1>Horde Rage Whispers</h1>
+
+    <input type="text" id="search" placeholder="Search character name...">
+    <button type="button" id="showall">show all</button>
+
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const whispers = [
+            // Newest on top
+            {
+                name: "superbull",
+                names: ["superbull", "zagan", "xfraz", "pee"],
+                items: [
+                    { gank: "rage_whispers_images/superbull/1-a.JPG", whisper: "rage_whispers_images/superbull/1-b.png" }
+                ]
+            },
+        ];
+
+        function getSlug() {
+            if (location.hash) return decodeURIComponent(location.hash.slice(1));
+            const parts = location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+            if (parts[0] === 'warcraftfeet') parts.shift();
+            if (parts[0] !== 'rage-whispers') return '';
+            return parts[1] || '';
+        }
+
+        function displayWhispers(filter = '', exact = false) {
+            const gallery = document.getElementById('gallery');
+            const f = filter.toLowerCase();
+            const filtered = whispers.filter(entry => {
+                return entry.names.some(n => {
+                    const name = n.toLowerCase();
+                    return exact ? name === f : name.includes(f);
+                });
+            });
+
+            if (filtered.length === 0) {
+                gallery.innerHTML = "<p>you're safe, for now</p>";
+            } else {
+                gallery.innerHTML = filtered.map(entry => {
+                    const pairs = entry.items.map(item => `
+                        <div class="whisper"><img src="${item.whisper}" alt="${entry.name}"></div>
+                        <div class="gank"><img src="${item.gank}" alt="${entry.name} gank"></div>
+                    `).join('');
+                    return `
+                    <div class="person">
+                        ${pairs}
+                        <h3>${entry.name}</h3>
+                        <p class="names">${entry.names.join(', ')}</p>
+                    </div>
+                    `;
+                }).join('');
+            }
+        }
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            displayWhispers(e.target.value);
+        });
+
+        document.getElementById('showall').addEventListener('click', () => {
+            document.getElementById('search').value = '';
+            history.replaceState(null, '', '/rage-whispers/');
+            displayWhispers();
+        });
+
+        const urlSlug = getSlug();
+        if (urlSlug) {
+            document.getElementById('search').value = urlSlug;
+            displayWhispers(urlSlug, true);
+        } else {
+            displayWhispers();
+        }
+    </script>
+</body>
+</html>

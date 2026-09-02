@@ -30,3 +30,30 @@
    - https://warcraftfeet.com/feet/
    - https://warcraftfeet.com/feet/charactername
    - Hard refresh with `Ctrl+F5` if you don't see it yet.
+
+# Adding a rage whisper
+
+Folder: `rage_whispers_images/<character>/`
+- `1-a` = the gank (combat log / kill). Smaller on the page.
+- `1-b` = the rage whisper. This is the main image.
+- Next incident for the same character is `2-a` and `2-b`. Filename case matters.
+
+Open `rage-whispers/index.html` and add at the **top** of the `whispers` array:
+
+```javascript
+{
+    name: "superbull",
+    names: ["superbull", "zagan", "xfraz", "pee"],
+    items: [
+        { gank: "rage_whispers_images/superbull/1-a.JPG", whisper: "rage_whispers_images/superbull/1-b.png" }
+    ]
+},
+```
+
+- `name` is the URL slug: `/rage-whispers/superbull`
+- `names` is everyone in the story. Search matches any of them.
+- Extra `1-a`/`1-b` pairs go in `items` (then `2-a`/`2-b`, etc).
+
+Commit the folder, the images, and `rage-whispers/index.html`. You do not copy this page over `404.html`.
+
+Do not drop the `rage-whispers` redirect at the top of `feet/index.html` when you copy that file over `404.html`.
