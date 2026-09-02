@@ -34,7 +34,7 @@
 # Adding a rage whisper
 
 Folder: `rage_whispers_images/<character>/`
-- `1-a` = the gank (combat log / kill). Smaller on the page.
+- `1-a` = the gank (combat log / kill). Smaller, shown first.
 - `1-b` = the rage whisper. This is the main image.
 - Next incident for the same character is `2-a` and `2-b`. Filename case matters.
 

@@ -29,7 +29,7 @@
         }
         .person .gank img {
             max-width: 380px;
-            margin-top: 12px;
+            margin-bottom: 12px;
         }
         .person h3 {
             margin: 16px 0 4px;
@@ -94,8 +94,8 @@
                 gallery.innerHTML = filtered.map(entry => {
                     return entry.items.map(item => `
                     <div class="person">
-                        <div class="whisper"><img src="${item.whisper}" alt="${entry.names.join(', ')}"></div>
                         <div class="gank"><img src="${item.gank}" alt="${entry.names.join(', ')} gank"></div>
+                        <div class="whisper"><img src="${item.whisper}" alt="${entry.names.join(', ')}"></div>
                         <h3>${entry.names.join(', ')}</h3>
                         <p class="killed">Killed by: ${entry.killedBy.join(', ')}</p>
                     </div>
