@@ -43,7 +43,8 @@ Open `rage-whispers/index.html` and add at the **top** of the `whispers` array:
 ```javascript
 {
     name: "superbull",
-    names: ["superbull", "zagan", "xfraz", "pee"],
+    names: ["superbull", "zagan"],
+    killedBy: ["xfraz", "pee"],
     items: [
         { gank: "rage_whispers_images/superbull/1-a.JPG", whisper: "rage_whispers_images/superbull/1-b.png" }
     ]
@@ -51,8 +52,10 @@ Open `rage-whispers/index.html` and add at the **top** of the `whispers` array:
 ```
 
 - `name` is the URL slug: `/rage-whispers/superbull`
-- `names` is everyone in the story. Search matches any of them.
-- Extra `1-a`/`1-b` pairs go in `items` (then `2-a`/`2-b`, etc).
+- `names` is who got killed. Shown on the card.
+- `killedBy` is who did it. Shown as `Killed by: ...`
+- Search matches both lists.
+- Extra `1-a`/`1-b` pairs go in `items` (then `2-a`/`2-b`, etc). Each pair is its own box.
 
 Commit the folder, the images, and `rage-whispers/index.html`. You do not copy this page over `404.html`.
 

@@ -17,22 +17,24 @@
         }
         .person {
             display: block;
+            max-width: 960px;
             margin: 40px auto;
+            padding: 20px;
+            border: 2px solid #333;
             text-align: center;
         }
         .person .whisper img {
             max-width: 900px;
-            border: 2px solid #333;
+            width: 100%;
         }
         .person .gank img {
             max-width: 380px;
-            border: 1px solid #999;
             margin-top: 12px;
         }
         .person h3 {
-            margin: 10px 0 4px;
+            margin: 16px 0 4px;
         }
-        .person .names {
+        .person .killed {
             margin: 0;
             color: #666;
             font-size: 14px;
@@ -59,7 +61,8 @@
             // Newest on top
             {
                 name: "superbull",
-                names: ["superbull", "zagan", "xfraz", "pee"],
+                names: ["superbull", "zagan"],
+                killedBy: ["xfraz", "pee"],
                 items: [
                     { gank: "rage_whispers_images/superbull/1-a.JPG", whisper: "rage_whispers_images/superbull/1-b.png" }
                 ]
@@ -78,7 +81,8 @@
             const gallery = document.getElementById('gallery');
             const f = filter.toLowerCase();
             const filtered = whispers.filter(entry => {
-                return entry.names.some(n => {
+                const all = entry.names.concat(entry.killedBy);
+                return all.some(n => {
                     const name = n.toLowerCase();
                     return exact ? name === f : name.includes(f);
                 });
@@ -88,17 +92,14 @@
                 gallery.innerHTML = "<p>you're safe, for now</p>";
             } else {
                 gallery.innerHTML = filtered.map(entry => {
-                    const pairs = entry.items.map(item => `
-                        <div class="whisper"><img src="${item.whisper}" alt="${entry.name}"></div>
-                        <div class="gank"><img src="${item.gank}" alt="${entry.name} gank"></div>
-                    `).join('');
-                    return `
+                    return entry.items.map(item => `
                     <div class="person">
-                        ${pairs}
-                        <h3>${entry.name}</h3>
-                        <p class="names">${entry.names.join(', ')}</p>
+                        <div class="whisper"><img src="${item.whisper}" alt="${entry.names.join(', ')}"></div>
+                        <div class="gank"><img src="${item.gank}" alt="${entry.names.join(', ')} gank"></div>
+                        <h3>${entry.names.join(', ')}</h3>
+                        <p class="killed">Killed by: ${entry.killedBy.join(', ')}</p>
                     </div>
-                    `;
+                    `).join('');
                 }).join('');
             }
         }
