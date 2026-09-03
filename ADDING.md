@@ -59,4 +59,18 @@ Open `rage-whispers/index.html` and add at the **top** of the `whispers` array:
 
 Commit the folder, the images, and `rage-whispers/index.html`. You do not copy this page over `404.html`.
 
-Do not drop the `rage-whispers` redirect at the top of `feet/index.html` when you copy that file over `404.html`.
+Do not drop the `rage-whispers` or `ganks` redirects at the top of `feet/index.html` when you copy that file over `404.html`.
+
+# Adding a gank
+
+1. Put the image in the `ganks/` folder.
+   - Name it after the character, e.g. `siad.JPG`
+   - Filename case matters.
+
+2. Open `ganks/index.html` and add a line at the **top** of the `ganks` array (newest on top):
+
+   ```javascript
+   { name: "siad", image: "ganks/siad.JPG" },
+   ```
+
+3. Commit the image and `ganks/index.html`. You do not copy this page over `404.html`.

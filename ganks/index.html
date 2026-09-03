@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ganks</title>
+    <base href="/">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #search {
+            font-size: 18px;
+            padding: 10px;
+            width: 300px;
+            margin: 20px 0;
+        }
+        .person {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .person img {
+            max-width: 900px;
+            border: 2px solid #333;
+        }
+        .person h3 {
+            margin: 10px 0;
+        }
+        #showall {
+            font-size: 18px;
+            padding: 10px 16px;
+            margin-left: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="/index.html">home</a></p>
+    <h1>Ganks</h1>
+
+    <input type="text" id="search" placeholder="Search character name...">
+    <button type="button" id="showall">show all</button>
+
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const ganks = [
+            // Newest on top
+            { name: "siad", image: "ganks/siad.JPG" },
+        ];
+
+        function getSlug() {
+            if (location.hash) return decodeURIComponent(location.hash.slice(1));
+            const parts = location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+            if (parts[0] === 'warcraftfeet') parts.shift();
+            if (parts[0] !== 'ganks') return '';
+            return parts[1] || '';
+        }
+
+        function displayGanks(filter = '', exact = false) {
+            const gallery = document.getElementById('gallery');
+            const f = filter.toLowerCase();
+            const filtered = ganks.filter(entry => {
+                const name = entry.name.toLowerCase();
+                return exact ? name === f : name.includes(f);
+            });
+
+            if (filtered.length === 0) {
+                gallery.innerHTML = "<p>you're safe, for now</p>";
+            } else {
+                gallery.innerHTML = filtered.map(entry => `
+                    <div class="person">
+                        <img src="${entry.image}" alt="${entry.name}">
+                        <h3>${entry.name}</h3>
+                    </div>
+                `).join('');
+            }
+        }
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            displayGanks(e.target.value);
+        });
+
+        document.getElementById('showall').addEventListener('click', () => {
+            document.getElementById('search').value = '';
+            history.replaceState(null, '', '/ganks/');
+            displayGanks();
+        });
+
+        const urlSlug = getSlug();
+        if (urlSlug) {
+            document.getElementById('search').value = urlSlug;
+            displayGanks(urlSlug, true);
+        } else {
+            displayGanks();
+        }
+    </script>
+</body>
+</html>
